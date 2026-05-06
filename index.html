@@ -1,1 +1,1096 @@
 
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriDietDaniel · Dietista Nutricionista</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1e3a0f;
+    --green-mid: #2f5a1a;
+    --green-accent: #5a9e2f;
+    --green-light: #a8d870;
+    --green-pale: #e8f5d6;
+    --cream: #fdf8f0;
+    --warm-white: #fefcf8;
+    --text-dark: #1a2010;
+    --text-mid: #3d5228;
+    --text-soft: #6b8a4e;
+    --gold: #c8a84b;
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Outfit’, sans-serif;
+background: var(–cream);
+color: var(–text-dark);
+overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+padding: 0 40px;
+height: 72px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: rgba(253,248,240,.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(90,158,47,.12);
+animation: fadeDown .6s ease both;
+}
+
+.nav-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 600;
+color: var(–green-deep);
+letter-spacing: .5px;
+text-decoration: none;
+}
+.nav-logo span { color: var(–green-accent); font-style: italic; }
+
+.nav-links {
+display: flex;
+gap: 36px;
+list-style: none;
+}
+.nav-links a {
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–text-mid);
+text-decoration: none;
+transition: color .2s;
+}
+.nav-links a:hover { color: var(–green-accent); }
+
+.nav-cta {
+background: var(–green-deep);
+color: #fff !important;
+padding: 10px 22px;
+border-radius: 40px;
+transition: background .2s !important;
+}
+.nav-cta:hover { background: var(–green-accent) !important; color: #fff !important; }
+
+/* ─── HERO ─── */
+.hero {
+min-height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+position: relative;
+overflow: hidden;
+padding-top: 72px;
+}
+
+.hero-left {
+background: var(–green-deep);
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 80px 64px 80px 80px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-leaf-bg {
+position: absolute;
+font-size: 280px;
+bottom: -60px;
+left: -40px;
+opacity: .05;
+line-height: 1;
+pointer-events: none;
+}
+
+.hero-pretitle {
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(–green-light);
+margin-bottom: 24px;
+animation: fadeUp .7s .2s ease both;
+}
+
+.hero-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 68px;
+line-height: 1.05;
+color: var(–warm-white);
+font-weight: 300;
+margin-bottom: 12px;
+animation: fadeUp .7s .35s ease both;
+}
+.hero-title em {
+font-style: italic;
+color: var(–green-light);
+display: block;
+}
+
+.hero-subtitle {
+font-size: 15px;
+color: rgba(232,245,214,.7);
+line-height: 1.7;
+max-width: 380px;
+margin-bottom: 48px;
+font-weight: 300;
+animation: fadeUp .7s .5s ease both;
+}
+
+.hero-btns {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+animation: fadeUp .7s .65s ease both;
+}
+
+.btn-primary {
+background: var(–green-light);
+color: var(–green-deep);
+padding: 14px 32px;
+border-radius: 40px;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+text-decoration: none;
+transition: all .25s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.btn-primary:hover {
+background: #fff;
+transform: translateY(-2px);
+box-shadow: 0 12px 32px rgba(0,0,0,.2);
+}
+
+.btn-outline {
+border: 1.5px solid rgba(168,216,112,.4);
+color: var(–green-pale);
+padding: 14px 32px;
+border-radius: 40px;
+font-size: 13px;
+font-weight: 500;
+letter-spacing: 1px;
+text-transform: uppercase;
+text-decoration: none;
+transition: all .25s;
+}
+.btn-outline:hover {
+border-color: var(–green-light);
+background: rgba(168,216,112,.1);
+}
+
+.hero-right {
+background: var(–green-pale);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 80px 40px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-card {
+background: white;
+border-radius: 24px;
+padding: 48px 40px;
+max-width: 380px;
+width: 100%;
+box-shadow: 0 24px 80px rgba(30,58,15,.12);
+animation: fadeUp .7s .4s ease both;
+position: relative;
+z-index: 2;
+}
+
+.hero-card-icon {
+font-size: 48px;
+margin-bottom: 20px;
+display: block;
+}
+
+.hero-card h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 28px;
+color: var(–green-deep);
+margin-bottom: 20px;
+font-weight: 600;
+}
+
+.hero-card-stat {
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 12px 0;
+border-bottom: 1px solid var(–green-pale);
+}
+.hero-card-stat:last-child { border-bottom: none; }
+
+.stat-dot {
+width: 8px; height: 8px;
+background: var(–green-accent);
+border-radius: 50%;
+flex-shrink: 0;
+}
+
+.stat-text {
+font-size: 14px;
+color: var(–text-mid);
+line-height: 1.4;
+}
+.stat-text strong { color: var(–text-dark); font-weight: 600; }
+
+.hero-bg-circles {
+position: absolute;
+border-radius: 50%;
+pointer-events: none;
+}
+.hbc1 {
+width: 400px; height: 400px;
+background: radial-gradient(circle, rgba(90,158,47,.15) 0%, transparent 70%);
+top: -100px; right: -100px;
+}
+.hbc2 {
+width: 250px; height: 250px;
+background: radial-gradient(circle, rgba(168,216,112,.2) 0%, transparent 70%);
+bottom: 40px; left: -50px;
+}
+
+/* ─── SECTION BASE ─── */
+section { padding: 100px 80px; }
+
+.section-label {
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(–green-accent);
+margin-bottom: 16px;
+display: block;
+}
+
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 52px;
+font-weight: 300;
+line-height: 1.1;
+color: var(–green-deep);
+margin-bottom: 24px;
+}
+.section-title em { font-style: italic; color: var(–green-accent); }
+
+.section-body {
+font-size: 16px;
+color: var(–text-soft);
+line-height: 1.8;
+max-width: 560px;
+font-weight: 300;
+}
+
+/* ─── SOBRE MÍ ─── */
+.sobre {
+background: var(–warm-white);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+align-items: center;
+}
+
+.sobre-visual {
+position: relative;
+}
+
+.sobre-box {
+background: var(–green-deep);
+border-radius: 24px;
+padding: 56px 48px;
+color: white;
+position: relative;
+overflow: hidden;
+}
+
+.sobre-box-leaf {
+position: absolute;
+font-size: 200px;
+right: -30px;
+bottom: -30px;
+opacity: .07;
+line-height: 1;
+}
+
+.sobre-box h4 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 36px;
+font-weight: 300;
+margin-bottom: 8px;
+font-style: italic;
+}
+.sobre-box p {
+font-size: 13px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–green-light);
+margin-bottom: 32px;
+}
+
+.sobre-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.pill {
+background: rgba(168,216,112,.15);
+border: 1px solid rgba(168,216,112,.3);
+color: var(–green-pale);
+padding: 8px 16px;
+border-radius: 40px;
+font-size: 12px;
+font-weight: 400;
+}
+
+.sobre-acreditation {
+margin-top: 24px;
+background: rgba(255,255,255,.07);
+border-radius: 12px;
+padding: 16px 20px;
+font-size: 13px;
+color: rgba(232,245,214,.8);
+line-height: 1.6;
+border-left: 3px solid var(–green-light);
+}
+
+/* ─── SERVICIOS ─── */
+.servicios {
+background: var(–cream);
+}
+
+.servicios-header {
+text-align: center;
+margin-bottom: 64px;
+}
+.servicios-header .section-body {
+margin: 0 auto;
+text-align: center;
+}
+
+.servicios-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 24px;
+}
+
+.servicio-card {
+background: white;
+border-radius: 20px;
+padding: 36px 28px;
+border: 1px solid rgba(90,158,47,.1);
+transition: all .3s;
+position: relative;
+overflow: hidden;
+}
+.servicio-card::before {
+content: ‘’;
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 3px;
+background: var(–green-accent);
+transform: scaleX(0);
+transition: transform .3s;
+transform-origin: left;
+}
+.servicio-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 20px 60px rgba(30,58,15,.1);
+}
+.servicio-card:hover::before { transform: scaleX(1); }
+
+.sc-icon {
+font-size: 36px;
+margin-bottom: 20px;
+display: block;
+}
+
+.sc-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: var(–green-deep);
+margin-bottom: 12px;
+font-weight: 600;
+}
+
+.sc-desc {
+font-size: 13.5px;
+color: var(–text-soft);
+line-height: 1.7;
+font-weight: 300;
+}
+
+/* ─── CÓMO FUNCIONA ─── */
+.proceso {
+background: var(–green-deep);
+position: relative;
+overflow: hidden;
+}
+
+.proceso-leaf-bg {
+position: absolute;
+font-size: 400px;
+right: -60px;
+top: 50%;
+transform: translateY(-50%);
+opacity: .04;
+pointer-events: none;
+}
+
+.proceso .section-title { color: var(–warm-white); }
+.proceso .section-label { color: var(–green-light); }
+.proceso .section-body { color: rgba(232,245,214,.6); }
+
+.proceso-steps {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 32px;
+margin-top: 64px;
+position: relative;
+z-index: 2;
+}
+
+.proceso-step {
+position: relative;
+}
+
+.step-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 72px;
+font-weight: 300;
+font-style: italic;
+color: rgba(168,216,112,.2);
+line-height: 1;
+margin-bottom: 8px;
+}
+
+.step-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: var(–green-pale);
+margin-bottom: 12px;
+font-weight: 400;
+}
+
+.step-desc {
+font-size: 13.5px;
+color: rgba(232,245,214,.55);
+line-height: 1.7;
+font-weight: 300;
+}
+
+/* ─── FAQ ─── */
+.faq {
+background: var(–warm-white);
+display: grid;
+grid-template-columns: 1fr 1.4fr;
+gap: 80px;
+align-items: start;
+}
+
+.faq-list {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.faq-item {
+background: white;
+border: 1px solid rgba(90,158,47,.12);
+border-radius: 14px;
+overflow: hidden;
+}
+
+.faq-question {
+width: 100%;
+background: none;
+border: none;
+padding: 20px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+cursor: pointer;
+font-family: ‘Outfit’, sans-serif;
+font-size: 15px;
+font-weight: 500;
+color: var(–text-dark);
+text-align: left;
+gap: 16px;
+}
+
+.faq-arrow {
+color: var(–green-accent);
+font-size: 20px;
+flex-shrink: 0;
+transition: transform .25s;
+}
+
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height .35s ease, padding .25s;
+font-size: 14px;
+color: var(–text-soft);
+line-height: 1.7;
+padding: 0 24px;
+font-weight: 300;
+}
+.faq-answer.open {
+max-height: 200px;
+padding: 0 24px 20px;
+}
+.faq-arrow.open { transform: rotate(45deg); }
+
+/* ─── CONTACTO ─── */
+.contacto {
+background: var(–cream);
+text-align: center;
+}
+
+.contacto .section-title { text-align: center; }
+.contacto .section-body { margin: 0 auto 56px; text-align: center; }
+
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+max-width: 800px;
+margin: 0 auto 56px;
+}
+
+.contact-card {
+background: white;
+border-radius: 20px;
+padding: 36px 24px;
+border: 1px solid rgba(90,158,47,.1);
+text-decoration: none;
+transition: all .3s;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
+}
+.contact-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 16px 48px rgba(30,58,15,.1);
+border-color: var(–green-accent);
+}
+
+.cc-icon { font-size: 32px; }
+
+.cc-label {
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–text-soft);
+}
+
+.cc-value {
+font-size: 14px;
+font-weight: 500;
+color: var(–green-deep);
+}
+
+/* Form */
+.contact-form {
+background: var(–green-deep);
+border-radius: 24px;
+padding: 56px 48px;
+max-width: 640px;
+margin: 0 auto;
+position: relative;
+overflow: hidden;
+}
+
+.cf-leaf {
+position: absolute;
+font-size: 220px;
+right: -30px;
+bottom: -30px;
+opacity: .05;
+pointer-events: none;
+}
+
+.contact-form h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 32px;
+color: var(–warm-white);
+margin-bottom: 32px;
+font-weight: 300;
+font-style: italic;
+}
+
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-bottom: 16px;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-bottom: 16px;
+}
+
+.form-group label {
+font-size: 11px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–green-light);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+background: rgba(255,255,255,.07);
+border: 1px solid rgba(168,216,112,.2);
+border-radius: 10px;
+padding: 14px 18px;
+font-family: ‘Outfit’, sans-serif;
+font-size: 14px;
+color: var(–warm-white);
+outline: none;
+transition: border-color .2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(232,245,214,.3); }
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(–green-light); }
+.form-group select option { background: var(–green-deep); }
+
+.form-group textarea { resize: vertical; min-height: 110px; }
+
+.btn-submit {
+width: 100%;
+background: var(–green-light);
+color: var(–green-deep);
+border: none;
+padding: 16px;
+border-radius: 40px;
+font-family: ‘Outfit’, sans-serif;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+cursor: pointer;
+transition: all .25s;
+margin-top: 8px;
+}
+.btn-submit:hover {
+background: #fff;
+transform: translateY(-2px);
+box-shadow: 0 12px 32px rgba(0,0,0,.2);
+}
+
+/* ─── FOOTER ─── */
+footer {
+background: var(–green-deep);
+padding: 40px 80px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.footer-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+color: var(–warm-white);
+font-weight: 400;
+}
+.footer-logo span { color: var(–green-light); font-style: italic; }
+
+.footer-copy {
+font-size: 12px;
+color: rgba(232,245,214,.4);
+}
+
+.footer-links {
+display: flex;
+gap: 24px;
+}
+.footer-links a {
+font-size: 20px;
+text-decoration: none;
+opacity: .5;
+transition: opacity .2s;
+}
+.footer-links a:hover { opacity: 1; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-16px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+opacity: 0;
+transform: translateY(32px);
+transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+nav { padding: 0 24px; }
+.nav-links { display: none; }
+.hero { grid-template-columns: 1fr; }
+.hero-right { display: none; }
+.hero-left { padding: 60px 32px; }
+.hero-title { font-size: 48px; }
+section { padding: 72px 32px; }
+.sobre { grid-template-columns: 1fr; gap: 40px; }
+.servicios-grid { grid-template-columns: 1fr 1fr; }
+.proceso-steps { grid-template-columns: 1fr 1fr; }
+.faq { grid-template-columns: 1fr; gap: 48px; }
+.contact-grid { grid-template-columns: 1fr; }
+.contact-form { padding: 40px 28px; }
+.form-row { grid-template-columns: 1fr; }
+footer { flex-direction: column; gap: 20px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">NutriDiet<span>Daniel</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Cómo funciona</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contacto" class="nav-cta">Pedir cita</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="hero-leaf-bg">🍃</div>
+    <span class="hero-pretitle">Dietista Nutricionista · España</span>
+    <h1 class="hero-title">
+      Tu salud,<br>tu mejor<br><em>inversión</em>
+    </h1>
+    <p class="hero-subtitle">
+      Alimentación personalizada basada en evidencia científica. Consulta online y presencial para que alcances tus objetivos de salud de forma real y sostenible.
+    </p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">✉ Pedir cita ahora</a>
+      <a href="#servicios" class="btn-outline">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-circles hbc1 hero-bg-circles"></div>
+    <div class="hero-bg-circles hbc2 hero-bg-circles"></div>
+    <div class="hero-card">
+      <span class="hero-card-icon">🌿</span>
+      <h3>¿Por qué NutriDietDaniel?</h3>
+      <div class="hero-card-stat">
+        <span class="stat-dot"></span>
+        <span class="stat-text"><strong>Formación clínica hospitalaria</strong> — base científica sólida</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="stat-dot"></span>
+        <span class="stat-text"><strong>Planes 100% personalizados</strong> — adaptados a ti y tu vida</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="stat-dot"></span>
+        <span class="stat-text"><strong>Seguimiento continuo</strong> — acompañamiento real en el proceso</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="stat-dot"></span>
+        <span class="stat-text"><strong>Sin dietas restrictivas</strong> — cambios sostenibles a largo plazo</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="stat-dot"></span>
+        <span class="stat-text"><strong>Consulta online y presencial</strong> — donde tú necesites</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+
+<section class="sobre" id="sobre">
+  <div class="sobre-visual reveal">
+    <div class="sobre-box">
+      <div class="sobre-box-leaf">🌿</div>
+      <h4>Daniel</h4>
+      <p>Dietista Nutricionista</p>
+      <div class="sobre-pills">
+        <span class="pill">Nutrición clínica</span>
+        <span class="pill">Patologías</span>
+        <span class="pill">Pérdida de peso</span>
+        <span class="pill">Nutrición hospitalaria</span>
+        <span class="pill">Educación nutricional</span>
+      </div>
+      <div class="sobre-acreditation">
+        🎓 Técnico Superior en Dietética · Especialización en Nutrición Clínica Hospitalaria
+      </div>
+    </div>
+  </div>
+  <div class="reveal">
+    <span class="section-label">Sobre mí</span>
+    <h2 class="section-title">Nutrición con <em>propósito</em></h2>
+    <p class="section-body">
+      Soy Daniel, dietista nutricionista especializado en nutrición clínica. Mi enfoque combina la evidencia científica más actualizada con un trato cercano y personalizado, porque creo que cada persona necesita una estrategia diferente.
+    </p>
+    <br>
+    <p class="section-body">
+      Con formación en el ámbito hospitalario y clínico, trabajo tanto con personas sanas que quieren mejorar su alimentación como con pacientes que necesitan manejo dietético específico por patologías o condiciones de salud concretas.
+    </p>
+    <br>
+    <p class="section-body">
+      Mi objetivo no es darte una dieta temporal: es enseñarte a comer bien para toda la vida.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+
+<section class="servicios" id="servicios">
+  <div class="servicios-header reveal">
+    <span class="section-label">Servicios</span>
+    <h2 class="section-title">¿En qué puedo <em>ayudarte</em>?</h2>
+    <p class="section-body">Servicios diseñados para adaptarse a tus necesidades, horarios y objetivos de salud.</p>
+  </div>
+  <div class="servicios-grid">
+    <div class="servicio-card reveal">
+      <span class="sc-icon">💻</span>
+      <h3 class="sc-title">Consulta Online</h3>
+      <p class="sc-desc">Videoconsulta desde cualquier lugar de España. Misma calidad que en persona, con la comodidad de hacerlo desde casa.</p>
+    </div>
+    <div class="servicio-card reveal">
+      <span class="sc-icon">🏥</span>
+      <h3 class="sc-title">Consulta Presencial</h3>
+      <p class="sc-desc">Atención en consulta con valoración completa, mediciones antropométricas y plan personalizado desde el primer día.</p>
+    </div>
+    <div class="servicio-card reveal">
+      <span class="sc-icon">🩺</span>
+      <h3 class="sc-title">Nutrición Clínica</h3>
+      <p class="sc-desc">Manejo dietético de patologías: diabetes, hipertensión, enfermedad renal, digestivas, oncología y más.</p>
+    </div>
+    <div class="servicio-card reveal">
+      <span class="sc-icon">⚖️</span>
+      <h3 class="sc-title">Pérdida de Peso</h3>
+      <p class="sc-desc">Sin restricciones absurdas ni efecto rebote. Un plan sostenible que encaje de verdad en tu día a día.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+
+<section class="proceso" id="proceso">
+  <div class="proceso-leaf-bg">🌿</div>
+  <span class="section-label reveal">Cómo funciona</span>
+  <h2 class="section-title reveal">El proceso es <em>sencillo</em></h2>
+  <p class="section-body reveal">De la primera consulta a tus objetivos, así trabajamos juntos.</p>
+  <div class="proceso-steps">
+    <div class="proceso-step reveal">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Primera consulta</h3>
+      <p class="step-desc">Hablamos de tu situación actual, historial clínico, hábitos y objetivos. Sin prisa, con escucha real.</p>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-num">02</div>
+      <h3 class="step-title">Valoración nutricional</h3>
+      <p class="step-desc">Analizamos tu composición corporal, analíticas si las tienes, y diseñamos un punto de partida personalizado.</p>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-num">03</div>
+      <h3 class="step-title">Plan personalizado</h3>
+      <p class="step-desc">Recibes tu pauta nutricional adaptada a ti: tus gustos, tu rutina, tu presupuesto y tus objetivos.</p>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-num">04</div>
+      <h3 class="step-title">Seguimiento continuo</h3>
+      <p class="step-desc">Revisiones periódicas, ajustes cuando son necesarios y apoyo constante para que no te quedes solo/a en el proceso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="faq" id="faq">
+  <div class="reveal">
+    <span class="section-label">Preguntas frecuentes</span>
+    <h2 class="section-title">Resuelvo tus <em>dudas</em></h2>
+    <p class="section-body">Si tienes alguna pregunta que no aparece aquí, escríbeme y te respondo enseguida.</p>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Cuánto dura la primera consulta?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-answer">La primera consulta dura aproximadamente 60 minutos. Es una sesión completa donde recojo toda la información necesaria para diseñar tu plan personalizado.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Con qué frecuencia son las revisiones?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-answer">Depende de tu caso y objetivos, pero habitualmente las revisiones son cada 3-4 semanas al inicio y se van espaciando según avanzas. Siempre hay comunicación entre consultas si lo necesitas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Puedo hacer consulta online aunque sea de fuera de España?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-answer">Sí, la consulta online está disponible para cualquier persona hispanohablante, independientemente de dónde te encuentres.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Trabajas con patologías específicas?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-answer">Sí. Con formación en nutrición clínica hospitalaria, trabajo con patologías como diabetes tipo 1 y 2, hipertensión, enfermedad renal crónica, síndrome de intestino irritable, enfermedad inflamatoria intestinal, y otras condiciones que requieren manejo dietético específico.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        ¿Las dietas son muy restrictivas?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-answer">No. Mi filosofía es exactamente la contraria: diseño pautas que se adaptan a tu vida real, tus gustos y tu rutina. Un plan que no puedes seguir no sirve de nada. Buscamos cambios sostenibles, no sufrimiento.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+  <div class="reveal">
+    <span class="section-label">Contacto</span>
+    <h2 class="section-title">Empieza hoy tu <em>cambio</em></h2>
+    <p class="section-body">¿Tienes dudas o quieres pedir cita? Escríbeme y te respondo en menos de 24 horas.</p>
+  </div>
+
+  <div class="contact-grid reveal">
+    <a href="https://instagram.com/nutridietdaniel" target="_blank" class="contact-card">
+      <span class="cc-icon">📸</span>
+      <span class="cc-label">Instagram</span>
+      <span class="cc-value">@nutridietdaniel</span>
+    </a>
+    <a href="https://wa.me/34600000000" target="_blank" class="contact-card">
+      <span class="cc-icon">💬</span>
+      <span class="cc-label">WhatsApp</span>
+      <span class="cc-value">Escríbeme directo</span>
+    </a>
+    <a href="mailto:hola@nutridietdaniel.es" class="contact-card">
+      <span class="cc-icon">✉️</span>
+      <span class="cc-label">Email</span>
+      <span class="cc-value">hola@nutridietdaniel.es</span>
+    </a>
+  </div>
+
+  <div class="contact-form reveal">
+    <div class="cf-leaf">🌿</div>
+    <h3>Solicita tu primera consulta</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Servicio de interés</label>
+      <select>
+        <option value="">Selecciona un servicio...</option>
+        <option>Consulta Online</option>
+        <option>Consulta Presencial</option>
+        <option>Nutrición Clínica / Patologías</option>
+        <option>Pérdida de Peso</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Cuéntame tu caso</label>
+      <textarea placeholder="¿Cuál es tu objetivo principal? ¿Tienes alguna patología o condición especial?"></textarea>
+    </div>
+    <button class="btn-submit" onclick="handleSubmit()">Enviar solicitud →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">NutriDiet<span>Daniel</span></div>
+  <span class="footer-copy">© 2025 NutriDietDaniel · Dietista Nutricionista</span>
+  <div class="footer-links">
+    <a href="https://instagram.com/nutridietdaniel" target="_blank" title="Instagram">📸</a>
+    <a href="https://wa.me/34600000000" target="_blank" title="WhatsApp">💬</a>
+    <a href="mailto:hola@nutridietdaniel.es" title="Email">✉️</a>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const arrow = btn.querySelector('.faq-arrow');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-arrow').forEach(a => a.classList.remove('open'));
+    if (!isOpen) {
+      answer.classList.add('open');
+      arrow.classList.add('open');
+    }
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = '✅ Solicitud enviada — te escribo pronto!';
+    btn.style.background = '#a8d870';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
