@@ -80,6 +80,19 @@ footer { background:#111; padding:24px 40px; display:flex; align-items:center; j
 .f-marca { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; color:var(--verde-claro); }
 .f-marca span { color:#fff; }
 .f-copy { font-size:0.75rem; color:rgba(255,255,255,0.3); }
+.portada-copyright {
+  position:relative;
+  z-index:1;
+  margin-top:32px;
+  padding:16px 24px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:12px;
+  background:rgba(0,0,0,0.2);
+  font-size:0.78rem;
+  color:rgba(255,255,255,0.45);
+  line-height:1.7;
+  text-align:center;
+}
 @media print { .download-bar { display:none !important; } body { font-size:12pt; } .portada { min-height:auto; page-break-after:always; } .capitulo { page-break-before:always; } }
 @media (max-width:680px) { .portada,.indice,.capitulo { padding:60px 24px; } .download-bar { flex-direction:column; gap:8px; font-size:0.78rem; } .menu-table { font-size:0.78rem; } }
 </style>
@@ -103,9 +116,14 @@ footer { background:#111; padding:24px 40px; display:flex; align-items:center; j
   </div>
   <div class="portada-autor">
     <p class="nombre">Daniel Álvarez Pérez</p>
-    <p class="titulo">Técnico Superior en Dietética y Nutrición</p>
+    <p class="titulo">Técnico Superior en Dietética</p>
     <p class="marca">NUTRIFARMADANI</p>
     <p class="lema">"Cuidar el cuerpo es honrar la vida."</p>
+    <div class="portada-copyright">
+      <p>Este material es únicamente para uso personal.</p>
+      <p>No puede ser distribuido, copiado ni vendido sin permiso del autor.</p>
+      <p>© 2026 Daniel Álvarez Pérez. Todos los derechos reservados.</p>
+    </div>
   </div>
 </section>
 
@@ -294,7 +312,7 @@ footer { background:#111; padding:24px 40px; display:flex; align-items:center; j
   <h2>Gracias por leer este ebook</h2>
   <p>Espero que esta guía te ayude a sacar el máximo partido a tu tratamiento con GLP-1, cuidando tu músculo, tu metabolismo y tu relación con la alimentación.</p>
   <p class="autor-final">Daniel Álvarez Pérez</p>
-  <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Técnico Superior en Dietética y Nutrición</p>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Técnico Superior en Dietética</p>
   <p class="marca-final">NUTRIFARMADANI</p>
   <p class="lema-final">"Cuidar el cuerpo es honrar la vida."</p>
   <p class="disclaimer">Este ebook tiene carácter informativo y divulgativo. No sustituye la consulta, el diagnóstico ni el tratamiento de un profesional sanitario cualificado.</p>
@@ -302,7 +320,8 @@ footer { background:#111; padding:24px 40px; display:flex; align-items:center; j
 
 <footer>
   <div class="f-marca"><span>NUTRI</span>FARMADANI</div>
-  <div class="f-copy">© 2025 · Daniel Álvarez Pérez · T.S. Dietética y Nutrición · España</div>
+  <div class="f-copy">© 2026 · Daniel Álvarez Pérez · T.S. Dietética y Nutrición · España</div>
+  <div class="f-copy" style="width:100%;text-align:center;margin-top:8px;font-size:0.72rem;color:rgba(255,255,255,0.25);">Este material es únicamente para uso personal. No puede ser distribuido, copiado ni vendido sin permiso del autor. © 2026 Daniel Álvarez Pérez. Todos los derechos reservados.</div>
 </footer>
 
 </body>
