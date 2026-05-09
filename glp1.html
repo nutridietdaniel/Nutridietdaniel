@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alimentación inteligente con GLP-1 · NutriFarmadani</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde-oscuro: #2d5a3d;
+  --verde-medio:  #4a7c5e;
+  --verde-claro:  #7aab8a;
+  --verde-menta:  #d4ede0;
+  --crema:        #f7f3ec;
+  --crema-dark:   #ede7db;
+  --acento:       #c8973a;
+  --gris:         #4a4a4a;
+  --negro:        #1a1a1a;
+  --blanco:       #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Source Serif 4', Georgia, serif; background: var(--crema); color: var(--negro); font-size: 16px; line-height: 1.7; }
+.download-bar { position:fixed; top:0; left:0; right:0; background:var(--verde-oscuro); color:#fff; display:flex; align-items:center; justify-content:center; gap:20px; padding:10px 24px; z-index:999; font-size:0.85rem; }
+.download-bar span { color:rgba(255,255,255,0.75); }
+.btn-dl { background:var(--acento); color:#fff; font-weight:600; font-size:0.82rem; padding:7px 20px; border-radius:100px; border:none; cursor:pointer; text-decoration:none; letter-spacing:0.04em; }
+.btn-dl:hover { opacity:0.88; }
+.portada { min-height:100vh; background:linear-gradient(160deg, var(--verde-oscuro) 0%, #1e3d2a 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 40px 60px; text-align:center; position:relative; overflow:hidden; }
+.portada::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 20% 20%, rgba(122,171,138,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.2) 0%, transparent 50%); }
+.portada-badge { display:inline-block; border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.75); padding:6px 20px; border-radius:100px; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:36px; position:relative; z-index:1; }
+.portada h1 { font-family:'Playfair Display',serif; font-size:clamp(2.6rem,6vw,4.4rem); font-weight:900; color:#fff; line-height:1.1; margin-bottom:8px; position:relative; z-index:1; }
+.portada h1 em { font-style:italic; color:#d4b870; }
+.portada-sub { font-size:1.1rem; color:rgba(255,255,255,0.65); font-weight:300; font-style:italic; margin-bottom:52px; position:relative; z-index:1; }
+.portada-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:64px; position:relative; z-index:1; }
+.portada-pill { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:100px; font-size:0.85rem; }
+.portada-autor { position:relative; z-index:1; }
+.portada-autor .nombre { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#d4b870; margin-bottom:4px; }
+.portada-autor .titulo { font-size:0.88rem; color:rgba(255,255,255,0.6); font-weight:300; margin-bottom:6px; }
+.portada-autor .marca { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:rgba(255,255,255,0.85); letter-spacing:0.1em; margin-bottom:8px; }
+.portada-autor .lema { font-style:italic; font-size:0.9rem; color:rgba(255,255,255,0.45); }
+.indice { max-width:760px; margin:0 auto; padding:80px 40px; }
+.section-eyebrow { font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--verde-medio); margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+.section-eyebrow::before { content:''; width:28px; height:2px; background:var(--verde-medio); }
+.indice h2 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--verde-oscuro); margin-bottom:40px; line-height:1.2; }
+.indice-list { list-style:none; }
+.indice-item { border-bottom:1px solid var(--crema-dark); padding:20px 12px; display:grid; grid-template-columns:48px 1fr; gap:20px; align-items:start; cursor:pointer; border-radius:8px; transition:background 0.15s; }
+.indice-item:hover { background:rgba(74,124,94,0.05); }
+.indice-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--verde-menta); line-height:1; padding-top:4px; }
+.indice-texto strong { display:block; font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--verde-oscuro); font-weight:700; margin-bottom:4px; }
+.indice-texto span { font-size:0.84rem; color:var(--gris); font-weight:300; font-style:italic; }
+.capitulo { max-width:760px; margin:0 auto; padding:80px 40px; border-top:1px solid var(--crema-dark); }
+.cap-num-label { font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-claro); margin-bottom:8px; }
+.cap-titulo { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; color:var(--verde-oscuro); line-height:1.2; }
+.cap-linea { height:3px; background:linear-gradient(90deg, var(--acento), transparent); border:none; margin:20px 0 28px; }
+.cap-intro { font-size:1.1rem; font-style:italic; color:var(--verde-medio); font-weight:300; line-height:1.75; margin-bottom:48px; padding-left:20px; border-left:3px solid var(--verde-menta); }
+.seccion-titulo { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--verde-oscuro); margin:40px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--crema-dark); }
+.cuerpo { font-size:0.97rem; color:var(--gris); line-height:1.8; margin-bottom:16px; font-weight:300; }
+.bullet-list { list-style:none; margin:12px 0 20px; display:flex; flex-direction:column; gap:10px; }
+.bullet-list li { display:flex; align-items:flex-start; gap:12px; font-size:0.95rem; color:var(--gris); line-height:1.7; font-weight:300; }
+.bullet-list li::before { content:'✦'; color:var(--verde-claro); font-size:0.7rem; flex-shrink:0; margin-top:6px; }
+.caja-destacada { background:var(--verde-menta); border-left:4px solid var(--verde-medio); border-radius:0 12px 12px 0; padding:18px 24px; margin:24px 0; font-size:0.95rem; color:var(--verde-oscuro); font-weight:600; line-height:1.65; font-style:italic; }
+.menu-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:0.88rem; }
+.menu-table th { background:var(--verde-oscuro); color:#fff; padding:10px 14px; text-align:left; font-weight:600; font-size:0.8rem; letter-spacing:0.06em; }
+.menu-table td { padding:10px 14px; border-bottom:1px solid var(--crema-dark); color:var(--gris); font-weight:300; vertical-align:top; line-height:1.5; }
+.menu-table tr:nth-child(even) td { background:rgba(74,124,94,0.04); }
+.menu-table td:first-child { font-weight:700; color:var(--verde-oscuro); white-space:nowrap; }
+.receta-card { background:var(--blanco); border:1px solid var(--crema-dark); border-radius:16px; padding:28px 32px; margin:20px 0; position:relative; overflow:hidden; }
+.receta-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--verde-oscuro), var(--verde-claro)); }
+.receta-card h4 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--verde-oscuro); font-weight:700; margin-bottom:12px; }
+.receta-macros { display:flex; gap:20px; margin-top:14px; flex-wrap:wrap; }
+.macro-badge { background:var(--crema); border:1px solid var(--crema-dark); padding:4px 14px; border-radius:100px; font-size:0.78rem; font-weight:600; color:var(--verde-oscuro); }
+.pagina-final { background:var(--verde-oscuro); padding:80px 40px; text-align:center; }
+.pagina-final h2 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:#fff; margin-bottom:20px; }
+.pagina-final p { font-size:1rem; color:rgba(255,255,255,0.65); font-weight:300; max-width:520px; margin:0 auto 16px; line-height:1.75; }
+.pagina-final .autor-final { font-family:'Playfair Display',serif; font-size:1.3rem; color:#d4b870; font-weight:700; margin-top:32px; }
+.pagina-final .marca-final { font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.8); letter-spacing:0.12em; font-weight:700; }
+.pagina-final .lema-final { font-style:italic; font-size:1rem; color:rgba(255,255,255,0.4); margin-bottom:40px; }
+.disclaimer { font-size:0.78rem !important; color:rgba(255,255,255,0.3) !important; max-width:480px; line-height:1.6; }
+footer { background:#111; padding:24px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.f-marca { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; color:var(--verde-claro); }
+.f-marca span { color:#fff; }
+.f-copy { font-size:0.75rem; color:rgba(255,255,255,0.3); }
+@media print { .download-bar { display:none !important; } body { font-size:12pt; } .portada { min-height:auto; page-break-after:always; } .capitulo { page-break-before:always; } }
+@media (max-width:680px) { .portada,.indice,.capitulo { padding:60px 24px; } .download-bar { flex-direction:column; gap:8px; font-size:0.78rem; } .menu-table { font-size:0.78rem; } }
+</style>
+</head>
+<body>
+
+<div class="download-bar">
+  <span>📘 Alimentación inteligente con GLP-1 · NutriFarmadani</span>
+  <button class="btn-dl" onclick="window.print()">🖨 Guardar como PDF (Ctrl+P)</button>
+</div>
+
+<section class="portada" id="portada">
+  <div class="portada-badge">Ebook gratuito · Edición 2025</div>
+  <h1>Alimentación<br/><em>inteligente</em><br/>con GLP-1</h1>
+  <p class="portada-sub">Ozempic · Wegovy · Mounjaro</p>
+  <div class="portada-pills">
+    <span class="portada-pill">🥗 Qué comer con GLP-1</span>
+    <span class="portada-pill">💪 Sin perder músculo</span>
+    <span class="portada-pill">🔄 Cero efecto rebote</span>
+    <span class="portada-pill">🏥 Evidencia clínica</span>
+  </div>
+  <div class="portada-autor">
+    <p class="nombre">Daniel Álvarez Pérez</p>
+    <p class="titulo">Técnico Superior en Dietética y Nutrición</p>
+    <p class="marca">NUTRIFARMADANI</p>
+    <p class="lema">"Cuidar el cuerpo es honrar la vida."</p>
+  </div>
+</section>
+
+<section class="indice" id="indice">
+  <div class="section-eyebrow">Contenidos</div>
+  <h2>Índice del ebook</h2>
+  <ul class="indice-list">
+    <li class="indice-item" onclick="document.getElementById('cap01').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">01</span>
+      <div class="indice-texto"><strong>¿Qué son los GLP-1 y cómo actúan en tu cuerpo?</strong><span>Mecanismo de acción · Tipos de fármacos · Efectos en apetito y digestión</span></div>
+    </li>
+    <li class="indice-item" onclick="document.getElementById('cap02').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">02</span>
+      <div class="indice-texto"><strong>Qué comer (y qué evitar) durante el tratamiento</strong><span>Alimentos prioritarios · Alimentos a evitar · Manejo de náuseas</span></div>
+    </li>
+    <li class="indice-item" onclick="document.getElementById('cap03').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">03</span>
+      <div class="indice-texto"><strong>Cómo proteger y ganar músculo con GLP-1</strong><span>Proteínas · Ejercicio de resistencia · Suplementación estratégica</span></div>
+    </li>
+    <li class="indice-item" onclick="document.getElementById('cap04').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">04</span>
+      <div class="indice-texto"><strong>Evitar el efecto rebote al dejar el tratamiento</strong><span>Por qué se recupera el peso · Protocolo de salida · Hábitos duraderos</span></div>
+    </li>
+    <li class="indice-item" onclick="document.getElementById('cap05').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">05</span>
+      <div class="indice-texto"><strong>Micronutrientes y suplementos esenciales</strong><span>Carencias frecuentes · B12, hierro, vitamina D · Guía de suplementación</span></div>
+    </li>
+    <li class="indice-item" onclick="document.getElementById('cap06').scrollIntoView({behavior:'smooth'})">
+      <span class="indice-num">06</span>
+      <div class="indice-texto"><strong>Menús semanales y recetas adaptadas</strong><span>Plan semanal completo · Recetas altas en proteína · Snacks y desayunos</span></div>
+    </li>
+  </ul>
+</section>
+
+<article class="capitulo" id="cap01">
+  <p class="cap-num-label">Capítulo 01</p>
+  <h2 class="cap-titulo">¿Qué son los GLP-1 y cómo actúan en tu cuerpo?</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Los agonistas del receptor GLP-1 han revolucionado el tratamiento de la obesidad. Entender cómo funcionan es el primer paso para sacarles el máximo provecho junto con la alimentación.</p>
+  <h3 class="seccion-titulo">¿Qué es el GLP-1?</h3>
+  <p class="cuerpo">El GLP-1 (péptido-1 similar al glucagón) es una hormona que produce de forma natural nuestro intestino después de comer. Su función principal es estimular la secreción de insulina, frenar el glucagón, ralentizar el vaciamiento gástrico y enviar señales de saciedad al cerebro.</p>
+  <ul class="bullet-list">
+    <li>Se libera en el intestino delgado tras la ingesta de alimentos</li>
+    <li>Reduce el apetito actuando directamente sobre el hipotálamo</li>
+    <li>Ralentiza el paso del alimento del estómago al intestino</li>
+    <li>Mejora el control glucémico en personas con diabetes tipo 2</li>
+  </ul>
+  <div class="caja-destacada">Los fármacos GLP-1 imitan esta hormona natural, pero con una duración de acción mucho mayor. Mientras que el GLP-1 natural dura minutos, semaglutida (Ozempic/Wegovy) actúa durante toda una semana.</div>
+  <h3 class="seccion-titulo">Tipos de fármacos GLP-1 disponibles</h3>
+  <ul class="bullet-list">
+    <li><strong>Semaglutida (Ozempic® · Wegovy®):</strong> administración subcutánea semanal.</li>
+    <li><strong>Tirzepatida (Mounjaro®):</strong> doble agonista GLP-1/GIP. Mayor pérdida de peso en estudios clínicos.</li>
+    <li><strong>Liraglutida (Victoza® · Saxenda®):</strong> administración diaria. Primera generación de GLP-1 para obesidad.</li>
+    <li><strong>Dulaglutida (Trulicity®):</strong> semanal, principalmente para diabetes tipo 2.</li>
+  </ul>
+  <h3 class="seccion-titulo">Cómo afectan a tu digestión y tu apetito</h3>
+  <ul class="bullet-list">
+    <li><strong>Reducen el apetito:</strong> muchas personas describen que "se les olvida comer".</li>
+    <li><strong>Enlentecen el vaciamiento gástrico:</strong> saciedad precoz, pero también náuseas.</li>
+    <li><strong>Reducen los antojos:</strong> actúan sobre los circuitos de recompensa del cerebro.</li>
+    <li><strong>Efectos secundarios frecuentes:</strong> náuseas, vómitos y estreñimiento al inicio.</li>
+  </ul>
+  <div class="caja-destacada">La clave nutricional está en adaptarse a un apetito reducido sin sacrificar la calidad ni la cantidad mínima de proteínas, vitaminas y minerales que tu cuerpo necesita.</div>
+</article>
+
+<article class="capitulo" id="cap02">
+  <p class="cap-num-label">Capítulo 02</p>
+  <h2 class="cap-titulo">Qué comer (y qué evitar) durante el tratamiento</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Con el apetito reducido, cada bocado cuenta el doble. La estrategia nutricional se basa en maximizar la densidad nutricional y minimizar los alimentos que generan molestias digestivas.</p>
+  <h3 class="seccion-titulo">Alimentos prioritarios</h3>
+  <ul class="bullet-list">
+    <li><strong>Proteína de calidad:</strong> pollo, pavo, pescado, huevos, legumbres, yogur griego.</li>
+    <li><strong>Verduras de hoja verde:</strong> espinacas, brócoli, coliflor, calabacín.</li>
+    <li><strong>Grasas saludables:</strong> aguacate, aceite de oliva virgen extra, nueces.</li>
+    <li><strong>Frutas enteras:</strong> fresas, arándanos, kiwi, mandarina.</li>
+    <li><strong>Cereales integrales en raciones pequeñas:</strong> arroz integral, avena, quinoa.</li>
+  </ul>
+  <div class="caja-destacada">Regla de oro: si solo puedes comer poco, que sea siempre primero la proteína y la verdura.</div>
+  <h3 class="seccion-titulo">Alimentos que debes limitar o evitar</h3>
+  <ul class="bullet-list">
+    <li><strong>Alimentos muy grasos o fritos:</strong> aumentan las náuseas.</li>
+    <li><strong>Azúcares simples y bebidas azucaradas:</strong> interfieren con el fármaco.</li>
+    <li><strong>Alcohol:</strong> interacción con la medicación y calorías vacías.</li>
+    <li><strong>Comidas muy copiosas:</strong> el estómago más lento provoca náuseas intensas.</li>
+    <li><strong>Ultraprocesados:</strong> alta densidad calórica, baja densidad nutricional.</li>
+  </ul>
+  <h3 class="seccion-titulo">Cómo manejar las náuseas</h3>
+  <ul class="bullet-list">
+    <li>Come en pequeñas cantidades y con mayor frecuencia (4–5 tomas pequeñas)</li>
+    <li>Evita acostarte justo después de comer</li>
+    <li>El jengibre y la menta pueden ayudar a calmar la náusea</li>
+    <li>Hidratación constante entre comidas, no con las comidas</li>
+  </ul>
+</article>
+
+<article class="capitulo" id="cap03">
+  <p class="cap-num-label">Capítulo 03</p>
+  <h2 class="cap-titulo">Cómo proteger y ganar músculo con GLP-1</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Sin la estrategia nutricional adecuada, una parte significativa del peso perdido puede ser músculo, no grasa. Eso es exactamente lo que queremos evitar.</p>
+  <h3 class="seccion-titulo">La proteína: tu mejor aliada</h3>
+  <ul class="bullet-list">
+    <li><strong>Objetivo mínimo:</strong> 1,2 g de proteína por kg de peso corporal al día</li>
+    <li><strong>Objetivo óptimo:</strong> 1,6–2,0 g/kg/día si practicas ejercicio de resistencia</li>
+    <li>Distribuye la proteína en todas las comidas, no toda en una sola toma</li>
+    <li>Los batidos de proteína son una excelente opción si no alcanzas el objetivo</li>
+  </ul>
+  <div class="caja-destacada">Si solo puedes hacer UNA cosa más allá de tomar el fármaco, que sea ejercicio de fuerza.</div>
+  <h3 class="seccion-titulo">El ejercicio de resistencia es imprescindible</h3>
+  <ul class="bullet-list">
+    <li>Entrenamiento de fuerza 2–3 días/semana mínimo</li>
+    <li>Incluye ejercicios multiarticulares: sentadillas, peso muerto, press, remo</li>
+    <li>Complementa con 30–45 min de caminar rápido o bicicleta</li>
+  </ul>
+</article>
+
+<article class="capitulo" id="cap04">
+  <p class="cap-num-label">Capítulo 04</p>
+  <h2 class="cap-titulo">Evitar el efecto rebote al dejar el tratamiento</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Los estudios muestran que la mayoría de personas que dejan los GLP-1 sin estrategia de salida recuperan el peso en 12–18 meses. Con el plan correcto, esto no tiene por qué ocurrir.</p>
+  <h3 class="seccion-titulo">Protocolo de salida progresivo</h3>
+  <ul class="bullet-list">
+    <li>Reducir dosis de forma escalonada con supervisión médica</li>
+    <li>Aumentar progresivamente el volumen de comida manteniendo la calidad</li>
+    <li>Mantener el registro alimentario los primeros 3 meses tras la retirada</li>
+    <li>Aumentar la frecuencia del ejercicio de fuerza durante la transición</li>
+  </ul>
+  <div class="caja-destacada">El GLP-1 es una herramienta, no una solución definitiva. La ventana de tratamiento debe usarse para construir hábitos que persistan cuando el fármaco no esté.</div>
+</article>
+
+<article class="capitulo" id="cap05">
+  <p class="cap-num-label">Capítulo 05</p>
+  <h2 class="cap-titulo">Micronutrientes y suplementos esenciales</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Cuando comes menos, el riesgo de déficit nutricional aumenta. Con los GLP-1 la ingesta calórica puede reducirse drásticamente.</p>
+  <h3 class="seccion-titulo">Guía práctica de suplementación</h3>
+  <ul class="bullet-list">
+    <li><strong>Vitamina B12:</strong> 500–1000 mcg/día sublingual</li>
+    <li><strong>Vitamina D3:</strong> 1000–2000 UI/día con vitamina K2</li>
+    <li><strong>Omega-3 (EPA+DHA):</strong> 1–2 g/día</li>
+    <li><strong>Proteína en polvo:</strong> si no se alcanza el objetivo proteico</li>
+    <li><strong>Magnesio bisglicinato:</strong> 200–400 mg/noche</li>
+  </ul>
+  <div class="caja-destacada">Invierte en lo que tiene evidencia: proteína, vitamina D, omega-3 y B12.</div>
+</article>
+
+<article class="capitulo" id="cap06">
+  <p class="cap-num-label">Capítulo 06</p>
+  <h2 class="cap-titulo">Menús semanales y recetas adaptadas</h2>
+  <hr class="cap-linea">
+  <p class="cap-intro">Un plan semanal orientativo pensado para personas en tratamiento con GLP-1: raciones ajustadas, alta densidad proteica y fácil digestión.</p>
+  <table class="menu-table">
+    <thead><tr><th>Día</th><th>Desayuno</th><th>Comida</th><th>Cena</th></tr></thead>
+    <tbody>
+      <tr><td>Lunes</td><td>Yogur griego con nueces y arándanos</td><td>Salmón al horno con brócoli y quinoa</td><td>Crema de calabacín con huevo pochado</td></tr>
+      <tr><td>Martes</td><td>Tortilla de 2 huevos con espinacas</td><td>Pechuga de pollo al limón con ensalada</td><td>Lentejas en crema con pan integral</td></tr>
+      <tr><td>Miércoles</td><td>Batido proteico con plátano y avena</td><td>Merluza al vapor con patata y judías verdes</td><td>Gazpacho con huevo duro</td></tr>
+      <tr><td>Jueves</td><td>Tostada integral con aguacate y salmón</td><td>Pollo al curry suave con arroz integral</td><td>Ensalada de garbanzos con atún</td></tr>
+      <tr><td>Viernes</td><td>Bowl de avena con canela y manzana</td><td>Bacalao al horno con pisto de verduras</td><td>Revuelto de champiñones y gambas</td></tr>
+      <tr><td>Sábado</td><td>Tortitas de avena proteicas</td><td>Chuletas de cerdo al horno con ensalada</td><td>Sopa de miso con tofu y algas</td></tr>
+      <tr><td>Domingo</td><td>Yogur con granola casera baja en azúcar</td><td>Cocido ligero (sin embutido)</td><td>Crema de lentejas rojas con jengibre</td></tr>
+    </tbody>
+  </table>
+  <div class="caja-destacada">Recuerda: no es necesario terminar el plato. Para cuando tu cuerpo diga que es suficiente.</div>
+  <h3 class="seccion-titulo">3 recetas estrella para GLP-1</h3>
+  <div class="receta-card">
+    <h4>🥤 Batido proteico antirebote</h4>
+    <p class="cuerpo">200 ml leche de avena · 30 g proteína de suero vainilla · 1 plátano maduro · 1 cucharada mantequilla de almendra · hielo.</p>
+    <div class="receta-macros"><span class="macro-badge">35 g proteína</span><span class="macro-badge">380 kcal</span><span class="macro-badge">Apto para náuseas</span></div>
+  </div>
+  <div class="receta-card">
+    <h4>🐟 Bowl de salmón y quinoa</h4>
+    <p class="cuerpo">80 g quinoa cocida · 120 g salmón a la plancha · ¼ aguacate · pepino · edamame · zumo de limón + aceite de sésamo.</p>
+    <div class="receta-macros"><span class="macro-badge">40 g proteína</span><span class="macro-badge">490 kcal</span><span class="macro-badge">Rico en omega-3</span></div>
+  </div>
+  <div class="receta-card">
+    <h4>🥦 Crema de coliflor proteica</h4>
+    <p class="cuerpo">1 coliflor al vapor · 200 g queso cottage · caldo de pollo · cúrcuma · pimienta negra. Servir con semillas de calabaza.</p>
+    <div class="receta-macros"><span class="macro-badge">22 g proteína</span><span class="macro-badge">210 kcal</span><span class="macro-badge">Alta tolerancia digestiva</span></div>
+  </div>
+</article>
+
+<section class="pagina-final">
+  <h2>Gracias por leer este ebook</h2>
+  <p>Espero que esta guía te ayude a sacar el máximo partido a tu tratamiento con GLP-1, cuidando tu músculo, tu metabolismo y tu relación con la alimentación.</p>
+  <p class="autor-final">Daniel Álvarez Pérez</p>
+  <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Técnico Superior en Dietética y Nutrición</p>
+  <p class="marca-final">NUTRIFARMADANI</p>
+  <p class="lema-final">"Cuidar el cuerpo es honrar la vida."</p>
+  <p class="disclaimer">Este ebook tiene carácter informativo y divulgativo. No sustituye la consulta, el diagnóstico ni el tratamiento de un profesional sanitario cualificado.</p>
+</section>
+
+<footer>
+  <div class="f-marca"><span>NUTRI</span>FARMADANI</div>
+  <div class="f-copy">© 2025 · Daniel Álvarez Pérez · T.S. Dietética y Nutrición · España</div>
+</footer>
+
+</body>
+</html>
