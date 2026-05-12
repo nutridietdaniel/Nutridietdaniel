@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>La Cena Perfecta – NutriFarmadani | Daniel Álvarez Pérez</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-oscuro: #1a4a2e;
+    --verde-medio: #2d7a4f;
+    --verde-claro: #4aab72;
+    --verde-menta: #a8ddb8;
+    --verde-fondo: #f0f8f3;
+    --crema: #faf9f5;
+    --texto: #1c2b22;
+    --gris: #6b7a6f;
+    --blanco: #ffffff;
+    --acento: #c8e6c9;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { color-scheme: light only; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background-color: #faf9f5 !important;
+color: #1c2b22 !important;
+line-height: 1.75;
+}
+
+/* ── HEADER ── */
+header {
+background: var(–blanco);
+border-bottom: 3px solid var(–verde-claro);
+padding: 18px 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo-area {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.logo-svg {
+width: 44px;
+height: 44px;
+}
+
+.brand-name {
+font-family: ‘Playfair Display’, serif;
+color: var(–verde-oscuro);
+font-size: 1.5rem;
+letter-spacing: 0.5px;
+}
+
+.brand-sub {
+color: var(–verde-medio);
+font-size: 0.72rem;
+font-weight: 300;
+letter-spacing: 2px;
+text-transform: uppercase;
+display: block;
+margin-top: -2px;
+}
+
+.header-web {
+color: var(–verde-medio);
+font-size: 0.78rem;
+letter-spacing: 1px;
+text-decoration: none;
+opacity: 0.85;
+}
+
+/* ── HERO ── */
+.hero {
+background: linear-gradient(135deg, var(–verde-fondo) 0%, #d6efe0 60%, var(–acento) 100%);
+padding: 80px 40px 60px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+top: -60px; right: -60px;
+width: 280px; height: 280px;
+border-radius: 50%;
+background: rgba(255,255,255,0.04);
+}
+
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: -80px; left: -40px;
+width: 220px; height: 220px;
+border-radius: 50%;
+background: rgba(255,255,255,0.03);
+}
+
+.hero-tag {
+display: inline-block;
+background: rgba(45,122,79,0.12);
+color: var(–verde-oscuro);
+border: 1px solid rgba(45,122,79,0.3);
+border-radius: 20px;
+padding: 5px 18px;
+font-size: 0.78rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 22px;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 5vw, 3.2rem);
+color: var(–verde-oscuro);
+line-height: 1.2;
+max-width: 680px;
+margin: 0 auto 20px;
+}
+
+.hero h1 em {
+color: var(–verde-medio);
+font-style: italic;
+}
+
+.hero-lead {
+color: var(–gris);
+font-size: 1.05rem;
+max-width: 560px;
+margin: 0 auto 30px;
+font-weight: 300;
+}
+
+.hero-author {
+color: var(–verde-medio);
+font-size: 0.82rem;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+}
+
+/* ── ÍNDICE ── */
+.indice-wrap {
+max-width: 760px;
+margin: 50px auto;
+padding: 0 24px;
+}
+
+.indice-box {
+background: var(–blanco);
+border-left: 4px solid var(–verde-claro);
+border-radius: 0 12px 12px 0;
+padding: 28px 32px;
+box-shadow: 0 2px 16px rgba(26,74,46,0.07);
+}
+
+.indice-box h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+color: var(–verde-oscuro);
+margin-bottom: 16px;
+}
+
+.indice-box ol {
+padding-left: 20px;
+color: var(–verde-medio);
+font-size: 0.93rem;
+}
+
+.indice-box li {
+margin-bottom: 6px;
+}
+
+.indice-box a {
+color: var(–verde-medio);
+text-decoration: none;
+}
+
+.indice-box a:hover { text-decoration: underline; }
+
+/* ── CONTENIDO ── */
+.content {
+max-width: 760px;
+margin: 0 auto;
+padding: 0 24px 60px;
+}
+
+.section {
+margin-bottom: 52px;
+}
+
+.section h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.65rem;
+color: var(–verde-oscuro);
+margin-bottom: 16px;
+padding-bottom: 10px;
+border-bottom: 2px solid var(–acento);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.icon {
+font-size: 1.3rem;
+}
+
+.section p {
+color: #2c3e30;
+font-size: 1rem;
+margin-bottom: 14px;
+}
+
+/* Lista estilo NutriFarmadani */
+.lista-verde {
+list-style: none;
+padding: 0;
+margin: 14px 0;
+}
+
+.lista-verde li {
+padding: 9px 14px 9px 36px;
+position: relative;
+font-size: 0.97rem;
+color: #2c3e30;
+border-left: 2px solid var(–acento);
+margin-bottom: 6px;
+background: var(–verde-fondo);
+border-radius: 0 8px 8px 0;
+}
+
+.lista-verde li::before {
+content: ‘✦’;
+position: absolute;
+left: 10px;
+color: var(–verde-claro);
+font-size: 0.75rem;
+top: 11px;
+}
+
+.lista-roja li {
+border-left-color: #f4ada5;
+background: #fff8f7;
+}
+.lista-roja li::before { color: #e07070; }
+
+/* Callout / destacado */
+.callout {
+background: linear-gradient(135deg, var(–verde-fondo), #d4edd9);
+color: var(–texto);
+border: 2px solid var(–verde-claro);
+border-radius: 14px;
+padding: 28px 30px;
+margin: 28px 0;
+}
+
+.callout p {
+color: var(–texto) !important;
+font-size: 1rem;
+}
+
+.callout strong {
+color: var(–verde-oscuro);
+}
+
+/* Ejemplos de cenas */
+.cenas-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+margin-top: 18px;
+}
+
+@media(max-width:560px){ .cenas-grid { grid-template-columns: 1fr; } }
+
+.cena-card {
+background: var(–blanco);
+border: 1px solid var(–acento);
+border-radius: 12px;
+padding: 16px 18px;
+font-size: 0.9rem;
+color: var(–texto);
+line-height: 1.5;
+box-shadow: 0 2px 8px rgba(26,74,46,0.06);
+}
+
+.cena-card .num {
+display: inline-block;
+background: var(–verde-medio);
+color: white;
+border-radius: 50%;
+width: 22px; height: 22px;
+font-size: 0.75rem;
+text-align: center;
+line-height: 22px;
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+/* Frase de cierre */
+.cierre-section {
+background: var(–verde-fondo);
+border-radius: 16px;
+padding: 36px 32px;
+text-align: center;
+margin-bottom: 50px;
+border: 1px solid var(–acento);
+}
+
+.cierre-section p {
+color: var(–gris);
+font-size: 0.97rem;
+margin-bottom: 10px;
+}
+
+.frase-cierre {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.35rem;
+color: var(–verde-oscuro);
+font-style: italic;
+margin: 14px 0 6px;
+}
+
+/* Footer */
+footer {
+background: var(–verde-fondo);
+border-top: 3px solid var(–verde-claro);
+color: var(–gris);
+text-align: center;
+padding: 32px 24px;
+font-size: 0.8rem;
+line-height: 1.8;
+}
+
+footer .footer-logo {
+font-family: ‘Playfair Display’, serif;
+color: var(–verde-oscuro);
+font-size: 1.1rem;
+margin-bottom: 6px;
+}
+
+footer a {
+color: var(–verde-medio);
+text-decoration: none;
+}
+
+footer .copy {
+margin-top: 10px;
+font-size: 0.74rem;
+opacity: 0.75;
+}
+
+/* Separador decorativo */
+.sep {
+text-align: center;
+color: var(–verde-claro);
+font-size: 1.2rem;
+letter-spacing: 10px;
+margin: 10px 0 30px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="logo-area">
+    <svg class="logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Trébol NutriFarmadani -->
+      <circle cx="40" cy="28" r="14" fill="#4aab72" opacity="0.9"/>
+      <circle cx="26" cy="50" r="14" fill="#4aab72" opacity="0.9"/>
+      <circle cx="54" cy="50" r="14" fill="#4aab72" opacity="0.9"/>
+      <rect x="37" y="52" width="6" height="16" rx="3" fill="#2d7a4f"/>
+      <circle cx="40" cy="28" r="7" fill="#a8ddb8" opacity="0.5"/>
+      <circle cx="26" cy="50" r="7" fill="#a8ddb8" opacity="0.5"/>
+      <circle cx="54" cy="50" r="7" fill="#a8ddb8" opacity="0.5"/>
+    </svg>
+    <div>
+      <span class="brand-name">NutriFarmadani</span>
+      <span class="brand-sub">Dietética &amp; Nutrición</span>
+    </div>
+  </div>
+  <a class="header-web" href="https://nutridietdaniel.github.io/Nutridietdaniel" target="_blank">nutridietdaniel.github.io/Nutridietdaniel</a>
+</header>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-tag">Blog · Alimentación</div>
+  <h1>La cena: mucho más que la última comida <em>del día</em></h1>
+  <p class="hero-lead">Lo que comes por la noche afecta cómo duermes, cómo te levantas y cómo funciona tu cuerpo. Te explico todo lo que necesitas saber.</p>
+  <p class="hero-author">Daniel Álvarez Pérez · Técnico Superior en Dietética</p>
+</div>
+
+<!-- INTRODUCCIÓN -->
+
+<div class="content" style="margin-top:48px;">
+  <div class="section">
+    <p>Llegamos al final del día con energía justa, menos paciencia y, muchas veces, con más apetito emocional que físico. Ese momento en que te preguntas <em>"¿qué ceno?"</em> suele resolverse con lo primero que hay, lo más rápido o lo más apetecible en ese instante. Y sin embargo, la cena es una de las comidas con mayor impacto en tu salud a largo plazo.</p>
+    <p>No porque sea la más importante del día, sino porque ocurre justo antes de que tu cuerpo entre en modo reparación. Lo que pongas en el plato puede facilitar ese proceso… o dificultarlo bastante.</p>
+    <p>En este artículo te cuento cómo abordar la cena desde un enfoque práctico, sin rigideces y con base en lo que realmente funciona para la mayoría de personas. Sin dogmas. Con sentido común y ciencia.</p>
+  </div>
+
+  <!-- ÍNDICE -->
+
+  <div class="indice-box" style="margin-bottom:52px;">
+    <h2>📋 Índice del artículo</h2>
+    <ol>
+      <li><a href="#nocturno">Lo que hace tu cuerpo mientras duermes</a></li>
+      <li><a href="#ligera">¿Cena ligera? Depende de lo que entiendas por ligero</a></li>
+      <li><a href="#proteinas">Las mejores proteínas para la noche</a></li>
+      <li><a href="#verdura">Verdura cruda por la noche: el gran dilema</a></li>
+      <li><a href="#ayuno">El ayuno nocturno como herramienta</a></li>
+      <li><a href="#habitos">Hábitos que arruinan una buena cena</a></li>
+      <li><a href="#ejemplos">Ideas de cenas equilibradas</a></li>
+      <li><a href="#metabolismo">Tu metabolismo nocturno al detalle</a></li>
+    </ol>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+
+  <div class="section" id="nocturno">
+    <h2><span class="icon">🌙</span> Lo que hace tu cuerpo mientras duermes</h2>
+    <p>Cuando cierras los ojos, tu cuerpo no se apaga. Todo lo contrario: entra en una fase de trabajo silencioso e inteligente. Durante el sueño ocurren procesos esenciales que dependen, en buena parte, de cómo hayas cenado:</p>
+    <ul class="lista-verde">
+      <li>El <strong>hígado</strong> activa sus mecanismos de depuración y síntesis</li>
+      <li>El <strong>sistema inmunológico</strong> se reorganiza y refuerza</li>
+      <li>El <strong>intestino</strong> lleva a cabo su ciclo de limpieza (el complejo motor migratorio)</li>
+      <li>Las <strong>hormonas del sueño, el cortisol y la insulina</strong> buscan su equilibrio</li>
+    </ul>
+    <p>Si el sistema digestivo tiene que lidiar con una cena pesada, difícil de procesar o tardía, toda esta maquinaria interna se ve comprometida. El resultado lo conoces: te levantas hinchado, cansado, sin energía, con mal sabor de boca o con digestiones pesadas.</p>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+
+  <div class="section" id="ligera">
+    <h2><span class="icon">🥗</span> ¿Cena ligera? Depende de lo que entiendas por ligero</h2>
+    <p>El consejo de "cena poco" está tan extendido que ya casi lo hemos asumido como ley. Pero no es tan sencillo. Comer poco no es lo mismo que comer bien. Puedes cenar muy poco y aun así cenar mal si eliges alimentos inflamatorios, ultraprocesados o difíciles de digerir.</p>
+    <p>Lo que buscamos no es cantidad reducida, sino una cena que el cuerpo pueda gestionar con facilidad. Eso significa:</p>
+    <ul class="lista-verde">
+      <li>Platos nutritivos pero sin exceso calórico innecesario</li>
+      <li>Cocinados suaves: vapor, horno, plancha, hervido</li>
+      <li>Sin azúcares añadidos ni alimentos muy procesados</li>
+      <li>Con presencia de vegetales cocinados y proteína de calidad</li>
+      <li>Acompañados de una buena masticación y un ambiente tranquilo</li>
+    </ul>
+    <p>Tu ritmo de vida, tu actividad física y tu estado digestivo también importan. Una persona que hace ejercicio intenso necesita una cena diferente a alguien sedentario. No hay una fórmula única.</p>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+
+  <div class="section" id="proteinas">
+    <h2><span class="icon">🐟</span> Las mejores proteínas para la noche</h2>
+    <p>La proteína en la cena es importante: ayuda a la reparación muscular, a la síntesis de hormonas y a mantener la saciedad. Pero no todas se digieren igual de bien a estas horas. Estas son las más adecuadas:</p>
+    <ul class="lista-verde">
+      <li><strong>Pescado blanco o azul suave</strong> — merluza, lubina, caballa, salmón al horno</li>
+      <li><strong>Marisco cocido o al vapor</strong> — gambas, mejillones, pulpo</li>
+      <li><strong>Huevos</strong> — en tortilla, escalfados, pasados por agua</li>
+      <li><strong>Pollo o pavo</strong> — a la plancha, al horno o en caldo</li>
+      <li><strong>Tofu o tempeh</strong> — bien cocinados, si los toleras bien</li>
+    </ul>
+    <p>En cambio, hay opciones que mejor dejar para el mediodía:</p>
+    <ul class="lista-verde lista-roja">
+      <li>Carnes rojas o muy grasas</li>
+      <li>Legumbres en grandes cantidades (salvo que las toleres perfectamente)</li>
+      <li>Frituras o preparaciones con mucha grasa saturada</li>
+    </ul>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+
+  <div class="section" id="verdura">
+    <h2><span class="icon">🥦</span> Verdura cruda por la noche: el gran dilema</h2>
+    <p>Las verduras crudas son nutritivas y estupendas… pero no para todo el mundo y no siempre por la noche. Si tienes un sistema digestivo robusto, una ensalada en la cena puede funcionarte muy bien. Pero si te despiertas con gases, tienes digestiones lentas o te levantas hinchado, el crudo por la noche podría ser parte del problema.</p>
+    <p>La cocción no destruye los nutrientes (aunque sí puede modificar algunos). Lo que sí hace es facilitar enormemente la digestión. Estas alternativas son mucho más amables para la noche:</p>
+    <ul class="lista-verde">
+      <li>Cremas y purés de verduras (calabaza, zanahoria, puerro, boniato)</li>
+      <li>Verduras al vapor o al horno</li>
+      <li>Salteados suaves con aceite de oliva y especias digestivas</li>
+      <li>Caldos vegetales o de huesos como primer plato</li>
+    </ul>
+    <div class="callout">
+      <p>Recuerda: <strong>lo sano no es universal</strong>. Un alimento puede ser excelente en términos nutricionales y aun así no sentarte bien. Observa cómo te sientes al día siguiente y ajusta. Tu digestión es la mejor brújula.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 5 -->
+
+  <div class="section" id="ayuno">
+    <h2><span class="icon">⏱️</span> El ayuno nocturno como herramienta</h2>
+    <p>No hablamos de ayuno intermitente estricto ni de pasar hambre. Simplemente de dejar unas <strong>10-12 horas de descanso digestivo</strong> entre la cena y el desayuno. Esto, que nuestros abuelos hacían sin llamarlo de ninguna manera especial, tiene efectos bien documentados:</p>
+    <ul class="lista-verde">
+      <li>Mejora la sensibilidad a la insulina</li>
+      <li>Favorece la diversidad de la microbiota intestinal</li>
+      <li>Reduce la inflamación sistémica de bajo grado</li>
+      <li>Puede mejorar la energía y el estado de ánimo al despertar</li>
+    </ul>
+    <p>Si cenas a las 21:00 h, desayuna alrededor de las 9:00 h. No es necesario alargarlo más si no te sienta bien. Y hay días en que una cena muy ligera —un caldo, una crema o incluso solo una infusión digestiva— es exactamente lo que tu cuerpo necesita.</p>
+  </div>
+
+  <!-- SECCIÓN 6 -->
+
+  <div class="section" id="habitos">
+    <h2><span class="icon">📵</span> Hábitos que arruinan una buena cena</h2>
+    <p>Puedes tener el plato más equilibrado del mundo y aun así hacer una mala digestión si el contexto no acompaña. El sistema nervioso simpático —el del estrés y la alerta— bloquea literalmente la digestión. Por eso importa tanto el cómo como el qué.</p>
+    <ul class="lista-verde lista-roja">
+      <li>Cenar frente a pantallas (móvil, TV, ordenador) activa el estrés mental</li>
+      <li>Cenar muy tarde, justo antes de acostarse</li>
+      <li>Comer deprisa, sin masticar, de pie o con tensión</li>
+      <li>Beber mucha agua durante la comida (diluye los jugos gástricos)</li>
+      <li>Terminar con postres dulces, aunque sean "saludables"</li>
+    </ul>
+    <p>El cambio más sencillo que puedes hacer hoy: apaga las pantallas durante la cena y mastica despacio. Es gratis, no requiere comprar nada y marca una diferencia real.</p>
+  </div>
+
+  <!-- SECCIÓN 7 -->
+
+  <div class="section" id="ejemplos">
+    <h2><span class="icon">🍽️</span> Ideas de cenas equilibradas</h2>
+    <p>Para terminar, algunos ejemplos concretos que funcionan bien. Son orientativos: adáptalos a lo que toleras, tienes en casa y te apetece.</p>
+    <div class="cenas-grid">
+      <div class="cena-card"><div class="num">1</div><br>Crema de calabaza con jengibre + huevos escalfados + aguacate en rodajas</div>
+      <div class="cena-card"><div class="num">2</div><br>Merluza al horno con limón + brócoli al vapor + puré de boniato</div>
+      <div class="cena-card"><div class="num">3</div><br>Caldo de pollo con fideos de arroz + tiras de pollo salteadas con puerro y comino</div>
+      <div class="cena-card"><div class="num">4</div><br>Mejillones al vapor + ensalada templada de tomate y anchoas</div>
+      <div class="cena-card"><div class="num">5</div><br>Sopa de miso con tofu firme + pak choi salteado con sésamo</div>
+      <div class="cena-card"><div class="num">6</div><br>Tortilla francesa de espinacas + champiñones al ajillo + rodajas de pepino</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 8 -->
+
+  <div class="section" id="metabolismo">
+    <h2><span class="icon">🔬</span> Tu metabolismo nocturno al detalle</h2>
+    <p>Para cerrar con algo de fisiología aplicada: mientras duermes, el hígado lleva a cabo tareas de reparación celular y metabolismo lipídico; el intestino produce serotonina y precursores de melatonina; y el tejido adiposo modifica su respuesta a la insulina. Cenar adecuadamente es la forma más directa de apoyar todos esos procesos.</p>
+    <p>Una cena mal elegida no "rompe" nada de un día para otro. Pero noches tras noche, el patrón acaba pesando: peor sueño, más inflamación, digestiones más lentas, más fatiga matutina. La consistencia es lo que transforma el bienestar.</p>
+  </div>
+
+  <!-- CIERRE -->
+
+  <div class="cierre-section">
+    <div class="sep">✦ ✦ ✦</div>
+    <p>No existe una cena perfecta universal. Existen cenas perfectas para cada persona, en cada momento. En consulta lo veo a diario: hay quienes necesitan más proteína, quienes toleran mejor ciertos cocinados, quienes duermen mejor sin hidratos por la noche… Tu cuerpo es el mejor indicador.</p>
+    <p style="margin-top:10px;">Si quieres orientación personalizada, estoy aquí para ayudarte.</p>
+    <p class="frase-cierre">"Cuidar el cuerpo es honrar la vida."</p>
+    <p style="margin-top:16px; font-size:0.85rem; color:var(--verde-medio);">
+      <strong>Daniel Álvarez Pérez</strong><br>
+      Técnico Superior en Dietética<br>
+      <a href="https://nutridietdaniel.github.io/Nutridietdaniel" style="color:var(--verde-medio);">nutridietdaniel.github.io/Nutridietdaniel</a>
+    </p>
+  </div>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">NutriFarmadani</div>
+  <div>Daniel Álvarez Pérez · Técnico Superior en Dietética</div>
+  <div><a href="https://nutridietdaniel.github.io/Nutridietdaniel">nutridietdaniel.github.io/Nutridietdaniel</a></div>
+  <div class="copy">© Daniel Álvarez Pérez · NutriFarmadani. Todos los derechos reservados.</div>
+</footer>
+
+</body>
+</html>
