@@ -4,40 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light">
-<meta name="description" content="Blog de nutrición y dietética de Daniel Álvarez Pérez – NutriFarmadani. Artículos con base científica sobre alimentación, salud digestiva y bienestar.">
-<title>Blog · NutriFarmadani</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Blog · NutriDietDaniel</title>
+<meta name="description" content="Blog de nutrición y dietética de Daniel Álvarez Pérez. Artículos con base científica sobre alimentación, salud y bienestar.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  html { color-scheme: light only; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', Arial, sans-serif; background: #fdf8f0; color: #1a2010; line-height: 1.7; }
 
-:root {
-–verde-oscuro: #1e3a0f;
-–verde-medio: #2f5a1a;
-–verde-claro: #5a9e2f;
-–verde-menta: #a8d878;
-–verde-fondo: #f2f7ec;
-–acento: #d4e8b0;
-–crema: #fdf8f0;
-–texto: #1a2a0f;
-–gris: #5a6b50;
-–blanco: #ffffff;
-}
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: ‘DM Sans’, sans-serif;
-background-color: var(–crema) !important;
-color: var(–texto) !important;
-line-height: 1.7;
-}
-
-/* ── NAV ── */
 nav {
-background: var(–blanco);
-border-bottom: 3px solid var(–verde-claro);
+background: #1e3a0f;
 padding: 16px 40px;
 display: flex;
 align-items: center;
@@ -45,486 +20,367 @@ justify-content: space-between;
 position: sticky;
 top: 0;
 z-index: 100;
-box-shadow: 0 2px 12px rgba(26,74,46,0.07);
 }
-
 .nav-logo {
-display: flex;
-align-items: center;
-gap: 10px;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: #e8f5d6;
 text-decoration: none;
+font-weight: 600;
 }
-
-.nav-logo svg { width: 38px; height: 38px; }
-
-.nav-brand {
-font-family: ‘Playfair Display’, serif;
-color: var(–verde-oscuro);
-font-size: 1.25rem;
-}
-
-.nav-links {
-display: flex;
-gap: 28px;
-list-style: none;
-}
-
-.nav-links a {
+.nav-logo span { color: #a8d870; font-style: italic; }
+.nav-back {
+color: #a8d870;
 text-decoration: none;
-color: var(–gris);
-font-size: 0.88rem;
-font-weight: 500;
-letter-spacing: 0.5px;
-transition: color 0.2s;
+font-size: 13px;
+letter-spacing: 1px;
 }
 
-.nav-links a:hover,
-.nav-links a.active { color: var(–verde-medio); }
-
-.nav-links a.active {
-border-bottom: 2px solid var(–verde-claro);
-padding-bottom: 2px;
-}
-
-@media(max-width:600px){
-nav { padding: 14px 20px; }
-.nav-links { gap: 16px; }
-.nav-links a { font-size: 0.8rem; }
-}
-
-/* ── HERO BLOG ── */
-.blog-hero {
-background: linear-gradient(135deg, #1e3a0f 0%, #2f5a1a 60%, #5a9e2f 100%);
-padding: 64px 24px 48px;
+.hero {
+background: linear-gradient(135deg, #1e3a0f 0%, #2f5a1a 100%);
+padding: 80px 40px;
 text-align: center;
-border-bottom: 1px solid var(–acento);
 }
-
-.blog-hero-tag {
+.hero-tag {
 display: inline-block;
-background: rgba(255,255,255,0.15);
-color: #d4e8b0;
-border: 1px solid rgba(255,255,255,0.25);
-border-radius: 20px;
-padding: 4px 16px;
-font-size: 0.75rem;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-margin-bottom: 18px;
-}
-
-.blog-hero h1 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(1.9rem, 4.5vw, 2.8rem);
-color: #ffffff;
-margin-bottom: 14px;
-line-height: 1.2;
-}
-
-.blog-hero p {
-color: rgba(255,255,255,0.82);
-font-size: 1rem;
-max-width: 520px;
-margin: 0 auto;
-font-weight: 300;
-}
-
-/* ── CATEGORÍAS ── */
-.categorias {
-display: flex;
-gap: 10px;
-justify-content: center;
-flex-wrap: wrap;
-padding: 28px 24px 0;
-max-width: 900px;
-margin: 0 auto;
-}
-
-.cat-btn {
-background: var(–blanco);
-border: 1.5px solid var(–acento);
-color: var(–gris);
-border-radius: 20px;
+background: rgba(168,216,112,0.2);
+border: 1px solid rgba(168,216,112,0.4);
+color: #a8d870;
 padding: 6px 18px;
-font-size: 0.82rem;
-cursor: pointer;
-transition: all 0.2s;
-font-family: ‘DM Sans’, sans-serif;
+border-radius: 40px;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 24px;
+}
+.hero h1 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2.2rem, 5vw, 3.8rem);
+color: #fefcf8;
+font-weight: 400;
+line-height: 1.2;
+margin-bottom: 16px;
+}
+.hero h1 em { font-style: italic; color: #a8d870; }
+.hero p {
+font-size: 16px;
+color: rgba(232,245,214,0.7);
+font-weight: 300;
+max-width: 500px;
+margin: 0 auto;
 }
 
-.cat-btn:hover,
-.cat-btn.active {
-background: var(–verde-medio);
-border-color: var(–verde-medio);
-color: var(–blanco);
+.blog-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 60px 24px;
 }
 
-/* ── GRID DE ARTÍCULOS ── */
-.blog-grid {
-max-width: 960px;
-margin: 40px auto 60px;
-padding: 0 24px;
+.section-label {
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: #5a9e2f;
+margin-bottom: 8px;
+display: block;
+}
+
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 36px;
+color: #1e3a0f;
+margin-bottom: 32px;
+font-weight: 400;
+}
+.section-title em { font-style: italic; color: #5a9e2f; }
+
+.articles-grid {
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+grid-template-columns: repeat(3, 1fr);
 gap: 28px;
+margin-bottom: 60px;
 }
 
-/* Artículo destacado — ocupa 2 columnas */
-.card-featured {
-grid-column: 1 / -1;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 0;
-background: var(–blanco);
-border-radius: 18px;
+.article-card {
+background: #ffffff;
+border-radius: 20px;
 overflow: hidden;
-box-shadow: 0 4px 24px rgba(26,74,46,0.09);
-border: 1px solid var(–acento);
-transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.card-featured:hover {
-transform: translateY(-4px);
-box-shadow: 0 8px 32px rgba(26,74,46,0.14);
-}
-
-@media(max-width:640px){
-.card-featured { grid-template-columns: 1fr; }
-}
-
-.card-featured .card-img {
-background: linear-gradient(135deg, var(–verde-medio), var(–verde-claro));
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 5rem;
-min-height: 220px;
-}
-
-.card-featured .card-body {
-padding: 36px 32px;
+border: 1px solid #e8f5d6;
+transition: transform 0.2s, box-shadow 0.2s;
+text-decoration: none;
 display: flex;
 flex-direction: column;
-justify-content: center;
+}
+.article-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 20px 60px rgba(30,58,15,0.12);
 }
 
-/* Tarjeta normal */
-.card {
-background: var(–blanco);
-border-radius: 16px;
+.card-top {
+background: linear-gradient(135deg, #1e3a0f, #2f5a1a);
+padding: 32px 28px;
+position: relative;
 overflow: hidden;
-box-shadow: 0 2px 16px rgba(26,74,46,0.07);
-border: 1px solid var(–acento);
-transition: transform 0.25s, box-shadow 0.25s;
-display: flex;
-flex-direction: column;
+}
+.card-top::after {
+content: ‘’;
+position: absolute;
+bottom: -20px;
+right: -20px;
+width: 80px;
+height: 80px;
+background: rgba(168,216,112,0.1);
+border-radius: 50%;
 }
 
-.card:hover {
-transform: translateY(-4px);
-box-shadow: 0 6px 28px rgba(26,74,46,0.13);
-}
+.card-emoji { font-size: 36px; margin-bottom: 12px; display: block; }
 
-.card .card-img {
-background: linear-gradient(135deg, var(–verde-fondo), var(–acento));
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 3.5rem;
-height: 140px;
-}
-
-.card .card-body {
-padding: 22px 22px 24px;
-flex: 1;
-display: flex;
-flex-direction: column;
-}
-
-/* Elementos comunes de tarjeta */
 .card-cat {
 display: inline-block;
-background: var(–verde-fondo);
-color: var(–verde-medio);
-border-radius: 10px;
-padding: 3px 12px;
-font-size: 0.72rem;
-font-weight: 600;
-letter-spacing: 1px;
+background: rgba(168,216,112,0.2);
+border: 1px solid rgba(168,216,112,0.3);
+color: #a8d870;
+padding: 4px 12px;
+border-radius: 40px;
+font-size: 10px;
+letter-spacing: 2px;
 text-transform: uppercase;
-margin-bottom: 12px;
-width: fit-content;
 }
+
+.card-body { padding: 24px 28px; flex-grow: 1; display: flex; flex-direction: column; }
 
 .card-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.2rem;
-color: var(–verde-oscuro);
-line-height: 1.35;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: #1e3a0f;
 margin-bottom: 10px;
+font-weight: 600;
+line-height: 1.3;
 }
 
-.card-featured .card-title {
-font-size: 1.6rem;
-}
-
-.card-excerpt {
-color: var(–gris);
-font-size: 0.88rem;
+.card-desc {
+font-size: 14px;
+color: #4a6a30;
 line-height: 1.6;
-flex: 1;
-margin-bottom: 18px;
+font-weight: 300;
+flex-grow: 1;
+margin-bottom: 20px;
 }
 
-.card-meta {
+.card-footer {
 display: flex;
 align-items: center;
 justify-content: space-between;
-font-size: 0.78rem;
-color: var(–gris);
+padding-top: 16px;
+border-top: 1px solid #e8f5d6;
 }
 
-.card-date { opacity: 0.7; }
+.card-date {
+font-size: 12px;
+color: #a8d870;
+font-weight: 300;
+}
 
-.card-link {
-display: inline-flex;
+.card-arrow {
+width: 32px;
+height: 32px;
+background: #1e3a0f;
+border-radius: 50%;
+display: flex;
 align-items: center;
-gap: 5px;
-color: var(–verde-medio);
-font-weight: 600;
-font-size: 0.82rem;
-text-decoration: none;
-transition: gap 0.2s;
+justify-content: center;
+color: #a8d870;
+font-size: 16px;
+transition: background 0.2s;
 }
+.article-card:hover .card-arrow { background: #5a9e2f; }
 
-.card-link:hover { gap: 9px; }
-
-/* Próximamente */
-.card-soon {
-opacity: 0.6;
-pointer-events: none;
-}
-
-.badge-soon {
-background: #f0f0f0;
-color: #999;
-border-radius: 8px;
-padding: 2px 10px;
-font-size: 0.72rem;
-font-weight: 600;
-}
-
-/* ── NEWSLETTER / CTA ── */
-.cta-box {
-background: linear-gradient(135deg, var(–verde-oscuro), var(–verde-medio));
-border-radius: 20px;
-padding: 44px 36px;
+.cta-banner {
+background: #1e3a0f;
+border-radius: 24px;
+padding: 56px 48px;
 text-align: center;
-max-width: 680px;
-margin: 0 auto 70px;
-color: var(–blanco);
+position: relative;
+overflow: hidden;
 }
-
-.cta-box h2 {
-font-family: ‘Playfair Display’, serif;
-font-size: 1.6rem;
+.cta-banner::before {
+content: ‘🌿’;
+position: absolute;
+font-size: 200px;
+right: -20px;
+bottom: -40px;
+opacity: 0.05;
+}
+.cta-banner h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 36px;
+color: #fefcf8;
+font-weight: 400;
 margin-bottom: 12px;
-color: var(–blanco);
 }
-
-.cta-box p {
-color: rgba(255,255,255,0.82);
-font-size: 0.95rem;
-margin-bottom: 24px;
+.cta-banner h2 em { font-style: italic; color: #a8d870; }
+.cta-banner p {
+font-size: 15px;
+color: rgba(232,245,214,0.65);
+font-weight: 300;
+max-width: 480px;
+margin: 0 auto 28px;
 }
-
 .cta-btn {
 display: inline-block;
-background: var(–blanco);
-color: var(–verde-oscuro);
-border-radius: 30px;
-padding: 13px 32px;
-font-weight: 600;
-font-size: 0.9rem;
+background: #a8d870;
+color: #1e3a0f;
+padding: 14px 36px;
+border-radius: 40px;
 text-decoration: none;
-transition: transform 0.2s, box-shadow 0.2s;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 1px;
+transition: background 0.2s;
 }
+.cta-btn:hover { background: #ffffff; }
 
-.cta-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-/* ── FOOTER ── */
 footer {
-background: var(–verde-fondo);
-border-top: 3px solid var(–verde-claro);
+background: #1e3a0f;
+padding: 32px 40px;
 text-align: center;
-padding: 30px 24px;
-font-size: 0.8rem;
-color: var(–gris);
-line-height: 1.9;
+color: rgba(232,245,214,0.5);
+font-size: 13px;
+margin-top: 0;
 }
+footer a { color: #a8d870; text-decoration: none; }
 
-footer .footer-brand {
-font-family: ‘Playfair Display’, serif;
-color: var(–verde-oscuro);
-font-size: 1.05rem;
-margin-bottom: 4px;
-}
-
-footer a { color: var(–verde-medio); text-decoration: none; }
-
-footer .copy {
-margin-top: 8px;
-font-size: 0.73rem;
-opacity: 0.65;
-}
-
-footer .frase {
-font-style: italic;
-color: var(–verde-medio);
-margin-top: 6px;
-font-size: 0.85rem;
+@media (max-width: 900px) {
+nav { padding: 16px 20px; }
+.hero { padding: 60px 24px; }
+.articles-grid { grid-template-columns: 1fr; }
+.cta-banner { padding: 40px 24px; }
 }
 </style>
 
 </head>
 <body>
 
-<!-- NAV -->
-
 <nav>
-  <a class="nav-logo" href="index.html">
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="28" r="14" fill="#4aab72" opacity="0.9"/>
-      <circle cx="26" cy="50" r="14" fill="#4aab72" opacity="0.9"/>
-      <circle cx="54" cy="50" r="14" fill="#4aab72" opacity="0.9"/>
-      <rect x="37" y="52" width="6" height="16" rx="3" fill="#2d7a4f"/>
-      <circle cx="40" cy="28" r="7" fill="#a8ddb8" opacity="0.5"/>
-      <circle cx="26" cy="50" r="7" fill="#a8ddb8" opacity="0.5"/>
-      <circle cx="54" cy="50" r="7" fill="#a8ddb8" opacity="0.5"/>
-    </svg>
-    <span class="nav-brand">NutriFarmadani</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
+  <a href="index.html" class="nav-logo">NutriDiet<span>Daniel</span></a>
+  <a href="index.html" class="nav-back">← Volver a inicio</a>
 </nav>
 
-<!-- HERO -->
-
-<div class="blog-hero">
-  <div class="blog-hero-tag">Artículos · Nutrición</div>
-  <h1>Blog NutriFarmadani</h1>
-  <p>Ciencia aplicada a tu alimentación diaria. Sin dogmas, sin milagros. Solo información honesta y útil.</p>
+<div class="hero">
+  <span class="hero-tag">Blog · Nutrición y Salud</span>
+  <h1>Aprende a comer<br><em>mejor</em></h1>
+  <p>Artículos con base científica sobre nutrición, deporte y salud. Sin mitos, sin milagros.</p>
 </div>
 
-<!-- CATEGORÍAS -->
+<div class="blog-container">
 
-<div class="categorias">
-  <button class="cat-btn active">Todos</button>
-  <button class="cat-btn">Digestión</button>
-  <button class="cat-btn">Hábitos</button>
-  <button class="cat-btn">Nutrición clínica</button>
-  <button class="cat-btn">Recetas</button>
-</div>
+<span class="section-label">Nutrición Deportiva</span>
 
-<!-- GRID -->
+  <h2 class="section-title">Artículos para <em>deportistas</em></h2>
 
-<div class="blog-grid">
+  <div class="articles-grid">
 
-  <!-- ARTÍCULO DESTACADO -->
-
-  <article class="card card-featured">
-    <div class="card-img">🌙</div>
-    <div class="card-body">
-      <span class="card-cat">Digestión · Hábitos</span>
-      <h2 class="card-title">Por qué la cena influye tanto en tu hambre, descanso y energía</h2>
-      <p class="card-excerpt">Lo que comes por la noche afecta cómo duermes, cómo te levantas y cómo funciona tu cuerpo. Todo lo que necesitas saber sobre las cenas: proteínas, ayuno nocturno, metabolismo y ejemplos prácticos.</p>
-      <div class="card-meta">
-        <span class="card-date">Mayo 2026</span>
-        <a class="card-link" href="blog-cenas.html">Leer artículo →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- TARJETA 2 — Próximamente -->
-
-  <article class="card card-soon">
-    <div class="card-img">🫀</div>
-    <div class="card-body">
-      <span class="card-cat">Nutrición clínica</span>
-      <h2 class="card-title">Alimentación y salud cardiovascular</h2>
-      <p class="card-excerpt">Qué dice la evidencia sobre grasas, colesterol y corazón. Desmentimos mitos y te damos pautas reales.</p>
-      <div class="card-meta">
-        <span class="badge-soon">Próximamente</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- TARJETA 3 — Próximamente -->
-
-  <article class="card card-soon">
-    <div class="card-img">🌿</div>
-    <div class="card-body">
-      <span class="card-cat">Digestión</span>
-      <h2 class="card-title">Tu microbiota: el órgano olvidado</h2>
-      <p class="card-excerpt">Cómo cuidar la flora intestinal con la alimentación y por qué es tan importante para tu salud general.</p>
-      <div class="card-meta">
-        <span class="badge-soon">Próximamente</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- TARJETA 4 — Próximamente -->
-
-  <article class="card card-soon">
-    <div class="card-img">⚡</div>
-    <div class="card-body">
-      <span class="card-cat">Hábitos</span>
-      <h2 class="card-title">Cómo vencer el cansancio con la dieta</h2>
-      <p class="card-excerpt">Fatiga crónica, falta de energía y alimentación. Te explico qué nutrientes son clave y qué hábitos cambian todo.</p>
-      <div class="card-meta">
-        <span class="badge-soon">Próximamente</span>
-      </div>
-    </div>
-  </article>
-
-</div>
-
-<!-- CTA -->
-
-<div style="padding: 0 24px;">
-  <div class="cta-box">
-    <h2>¿Tienes dudas sobre tu alimentación?</h2>
-    <p>Si sientes que tu alimentación te cuesta más de lo que debería, podemos trabajarlo juntos.</p>
-    <a class="cta-btn" href="index.html#contacto">Contactar con Daniel</a>
+```
+<a href="blog-gimnasio.html" class="article-card">
+  <div class="card-top">
+    <span class="card-emoji">🏋️</span>
+    <span class="card-cat">Nutrición Deportiva</span>
   </div>
-</div>
+  <div class="card-body">
+    <h3 class="card-title">Qué comer antes y después del gimnasio</h3>
+    <p class="card-desc">Guía completa sobre nutrición perientrenamiento. Qué comer, cuándo y en qué cantidad para rendir más y recuperarte mejor.</p>
+    <div class="card-footer">
+      <span class="card-date">Mayo 2026</span>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</a>
 
-<!-- FOOTER -->
+<a href="blog-musculo.html" class="article-card">
+  <div class="card-top">
+    <span class="card-emoji">💪</span>
+    <span class="card-cat">Nutrición Deportiva</span>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Dieta para ganar músculo sin ganar grasa</h3>
+    <p class="card-desc">Aprende cómo estructurar tu alimentación para maximizar la ganancia muscular minimizando la acumulación de grasa.</p>
+    <div class="card-footer">
+      <span class="card-date">Mayo 2026</span>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</a>
+
+<a href="blog-suplementos.html" class="article-card">
+  <div class="card-top">
+    <span class="card-emoji">🧪</span>
+    <span class="card-cat">Nutrición Deportiva</span>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Suplementos que realmente funcionan</h3>
+    <p class="card-desc">Guía honesta sobre suplementación deportiva. Qué tiene evidencia real, qué es marketing y qué deberías evitar.</p>
+    <div class="card-footer">
+      <span class="card-date">Mayo 2026</span>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</a>
+```
+
+  </div>
+
+<span class="section-label">Alimentación y Bienestar</span>
+
+  <h2 class="section-title">Más <em>artículos</em></h2>
+
+  <div class="articles-grid">
+
+```
+<a href="blog-cenas.html" class="article-card">
+  <div class="card-top">
+    <span class="card-emoji">🌙</span>
+    <span class="card-cat">Hábitos</span>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Por qué la cena influye tanto en tu hambre, descanso y energía</h3>
+    <p class="card-desc">Lo que cenas determina cómo duermes, cómo amaneces y cuánta hambre tienes al día siguiente. Descubre por qué.</p>
+    <div class="card-footer">
+      <span class="card-date">Mayo 2026</span>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</a>
+
+<a href="glp1.html" class="article-card">
+  <div class="card-top">
+    <span class="card-emoji">💊</span>
+    <span class="card-cat">Nutrición Clínica</span>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Alimentación inteligente con GLP-1</h3>
+    <p class="card-desc">Guía completa para personas en tratamiento con Ozempic, Wegovy o Mounjaro. Qué comer, cómo proteger el músculo y evitar el rebote.</p>
+    <div class="card-footer">
+      <span class="card-date">Ebook gratuito</span>
+      <span class="card-arrow">→</span>
+    </div>
+  </div>
+</a>
+```
+
+  </div>
+
+  <div class="cta-banner">
+    <h2>¿Sientes que tu alimentación<br>te cuesta más de lo que debería?</h2>
+    <p>Si sientes que tu alimentación te cuesta más de lo que debería, podemos trabajarlo juntos.</p>
+    <a href="index.html#contacto" class="cta-btn">Hablemos →</a>
+  </div>
+
+</div>
 
 <footer>
-  <div class="footer-brand">NutriFarmadani</div>
-  <div>Daniel Álvarez Pérez · Técnico Superior en Dietética</div>
-  <div><a href="https://nutridietdaniel.github.io/Nutridietdaniel">nutridietdaniel.github.io/Nutridietdaniel</a></div>
-  <div class="frase">"Cuidar el cuerpo es honrar la vida."</div>
-  <div class="copy">© Daniel Álvarez Pérez · NutriFarmadani. Todos los derechos reservados.</div>
+  <p>© 2026 · <a href="index.html">NutriDietDaniel</a> · Daniel Álvarez Pérez · Técnico Superior en Dietética</p>
+  <p style="margin-top:8px;font-size:11px;">Cuidar el cuerpo es honrar la vida.</p>
 </footer>
-
-<script>
-  // Filtro de categorías (visual, para cuando haya más artículos)
-  document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-</script>
 
 </body>
 </html>
