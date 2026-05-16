@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué comer antes y después del gimnasio · NutriDietDaniel</title>
+<meta name="description" content="Guía completa de nutrición para deportistas: qué comer antes y después del entrenamiento para rendir más y recuperarte mejor. Por Daniel Álvarez, Técnico Superior en Dietética.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', Arial, sans-serif; background: #fdf8f0; color: #1a2010; line-height: 1.7; }
+
+nav {
+background: #1e3a0f;
+padding: 16px 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.nav-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: #e8f5d6;
+text-decoration: none;
+font-weight: 600;
+}
+.nav-logo span { color: #a8d870; font-style: italic; }
+.nav-back {
+color: #a8d870;
+text-decoration: none;
+font-size: 13px;
+letter-spacing: 1px;
+}
+
+.hero {
+background: linear-gradient(135deg, #1e3a0f 0%, #2f5a1a 100%);
+padding: 80px 40px;
+text-align: center;
+}
+.hero-tag {
+display: inline-block;
+background: rgba(168,216,112,0.2);
+border: 1px solid rgba(168,216,112,0.4);
+color: #a8d870;
+padding: 6px 18px;
+border-radius: 40px;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 24px;
+}
+.hero h1 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2rem, 5vw, 3.5rem);
+color: #fefcf8;
+font-weight: 400;
+line-height: 1.2;
+max-width: 700px;
+margin: 0 auto 20px;
+}
+.hero h1 em { font-style: italic; color: #a8d870; }
+.hero-meta {
+font-size: 13px;
+color: rgba(232,245,214,0.6);
+margin-top: 16px;
+}
+
+.article {
+max-width: 760px;
+margin: 0 auto;
+padding: 60px 24px;
+}
+
+.intro {
+font-size: 18px;
+color: #2f5a1a;
+font-style: italic;
+font-weight: 300;
+line-height: 1.8;
+border-left: 4px solid #a8d870;
+padding-left: 24px;
+margin-bottom: 48px;
+}
+
+h2 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 28px;
+color: #1e3a0f;
+margin: 48px 0 16px;
+padding-bottom: 8px;
+border-bottom: 2px solid #e8f5d6;
+}
+
+h3 {
+font-size: 18px;
+color: #2f5a1a;
+margin: 28px 0 12px;
+font-weight: 600;
+}
+
+p { font-size: 16px; color: #3a3a3a; margin-bottom: 16px; font-weight: 300; line-height: 1.8; }
+
+.highlight {
+background: #e8f5d6;
+border-left: 4px solid #5a9e2f;
+border-radius: 0 12px 12px 0;
+padding: 20px 24px;
+margin: 28px 0;
+font-size: 15px;
+color: #1e3a0f;
+font-weight: 500;
+line-height: 1.6;
+}
+
+ul, ol { padding-left: 24px; margin-bottom: 20px; }
+li { font-size: 15px; color: #3a3a3a; margin-bottom: 8px; font-weight: 300; line-height: 1.7; }
+li strong { color: #1e3a0f; font-weight: 600; }
+
+.food-table {
+width: 100%;
+border-collapse: collapse;
+margin: 24px 0;
+font-size: 14px;
+}
+.food-table th {
+background: #1e3a0f;
+color: #fff;
+padding: 12px 16px;
+text-align: left;
+font-weight: 600;
+}
+.food-table td {
+padding: 12px 16px;
+border-bottom: 1px solid #e8f5d6;
+color: #3a3a3a;
+font-weight: 300;
+}
+.food-table tr:nth-child(even) td { background: rgba(168,216,112,0.08); }
+.food-table td:first-child { font-weight: 600; color: #1e3a0f; }
+
+.autor-card {
+background: #1e3a0f;
+border-radius: 20px;
+padding: 36px;
+margin: 60px 0 40px;
+display: flex;
+align-items: center;
+gap: 24px;
+}
+.autor-avatar {
+width: 72px;
+height: 72px;
+border-radius: 50%;
+background: #a8d870;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 32px;
+flex-shrink: 0;
+}
+.autor-info h4 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 20px;
+color: #e8f5d6;
+margin-bottom: 4px;
+}
+.autor-info p { font-size: 13px; color: #a8d870; margin: 0; font-style: italic; }
+
+.cta-section {
+background: #e8f5d6;
+border-radius: 20px;
+padding: 40px;
+text-align: center;
+margin: 40px 0;
+}
+.cta-section h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 28px;
+color: #1e3a0f;
+margin-bottom: 12px;
+}
+.cta-section p { color: #2f5a1a; margin-bottom: 24px; }
+.cta-btn {
+display: inline-block;
+background: #1e3a0f;
+color: #fff;
+padding: 14px 32px;
+border-radius: 40px;
+text-decoration: none;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 1px;
+}
+.cta-btn:hover { background: #5a9e2f; }
+
+footer {
+background: #1e3a0f;
+padding: 32px 40px;
+text-align: center;
+color: rgba(232,245,214,0.5);
+font-size: 13px;
+}
+footer a { color: #a8d870; text-decoration: none; }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">NutriDiet<span>Daniel</span></a>
+  <a href="blog.html" class="nav-back">← Volver al blog</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Nutrición Deportiva</span>
+  <h1>Qué comer antes y después<br>del <em>gimnasio</em></h1>
+  <p class="hero-meta">Por Daniel Álvarez · Técnico Superior en Dietética · Mayo 2026</p>
+</div>
+
+<article class="article">
+
+  <p class="intro">Si entrenas y no cuidas lo que comes antes y después del ejercicio, estás dejando el 50% de los resultados sobre la mesa. La nutrición perientrenamiento es uno de los factores más importantes para rendir más, recuperarte mejor y ver cambios reales en tu cuerpo.</p>
+
+  <h2>¿Por qué importa lo que comes alrededor del entrenamiento?</h2>
+  <p>Cuando entrenas, tu cuerpo usa glucógeno muscular como combustible principal. Si llegas al gimnasio con los depósitos vacíos, rendirás menos, te fatigarás antes y tu cuerpo empezará a usar músculo como energía — exactamente lo que queremos evitar.</p>
+  <p>Después del entrenamiento, hay una ventana de oportunidad en la que tus músculos están especialmente receptivos a absorber nutrientes para reparar el daño muscular y crecer. Aprovecharla marca la diferencia entre estancarse y progresar.</p>
+
+  <div class="highlight">
+    💡 La nutrición no sustituye al entrenamiento, pero el entrenamiento sin nutrición adecuada multiplica el tiempo que tardas en ver resultados.
+  </div>
+
+  <h2>Qué comer ANTES del entrenamiento</h2>
+
+  <h3>⏰ ¿Cuándo comer antes de entrenar?</h3>
+  <p>Lo ideal es comer entre <strong>1,5 y 2 horas antes</strong> del entrenamiento. Si tienes poco tiempo, una comida pequeña 45-60 minutos antes también funciona.</p>
+
+  <h3>🍽️ Qué debe incluir</h3>
+  <ul>
+    <li><strong>Carbohidratos de digestión media:</strong> arroz, avena, pasta integral, patata, fruta. Te darán energía sostenida durante el entrenamiento.</li>
+    <li><strong>Proteína moderada:</strong> pollo, huevo, yogur griego, atún. Ayuda a proteger el músculo durante el esfuerzo.</li>
+    <li><strong>Poca grasa y fibra:</strong> la grasa ralentiza la digestión y puede generar molestias durante el ejercicio.</li>
+  </ul>
+
+  <table class="food-table">
+    <thead><tr><th>Tiempo antes</th><th>Opción ideal</th></tr></thead>
+    <tbody>
+      <tr><td>2 horas antes</td><td>Arroz con pollo y verduras salteadas</td></tr>
+      <tr><td>1,5 horas antes</td><td>Tostada integral con pavo y tomate</td></tr>
+      <tr><td>1 hora antes</td><td>Yogur griego con plátano y avena</td></tr>
+      <tr><td>30-45 min antes</td><td>Plátano maduro + 10 g proteína en polvo</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight">
+    🚫 Evita entrenar en ayunas si tu objetivo es ganar músculo. El ayuno puede funcionar para pérdida de grasa en personas adaptadas, pero no es la estrategia más eficiente para la mayoría.
+  </div>
+
+  <h2>Qué comer DESPUÉS del entrenamiento</h2>
+
+  <h3>⏰ ¿Cuándo comer después de entrenar?</h3>
+  <p>Intenta comer dentro de las <strong>2 horas posteriores</strong> al entrenamiento. En este período tu cuerpo tiene mayor capacidad para sintetizar proteína muscular y reponer glucógeno.</p>
+
+  <h3>🍽️ Qué debe incluir</h3>
+  <ul>
+    <li><strong>Proteína de calidad y absorción rápida:</strong> mínimo 25-40 g. Huevo, pollo, pescado, proteína en polvo, yogur griego.</li>
+    <li><strong>Carbohidratos para reponer glucógeno:</strong> arroz, patata, fruta, pan integral. Especialmente importante si entrenas dos días seguidos.</li>
+    <li><strong>Hidratación:</strong> repón los líquidos perdidos durante el entrenamiento. Agua o bebida isotónica si el entreno fue muy intenso.</li>
+  </ul>
+
+  <table class="food-table">
+    <thead><tr><th>Objetivo</th><th>Comida post-entreno ideal</th></tr></thead>
+    <tbody>
+      <tr><td>Ganar músculo</td><td>Salmón al horno + arroz integral + ensalada</td></tr>
+      <tr><td>Perder grasa</td><td>Pechuga de pollo + verduras al vapor + yogur griego</td></tr>
+      <tr><td>Rendimiento</td><td>Pasta integral con atún + fruta de postre</td></tr>
+      <tr><td>Prisa / rápido</td><td>Batido: proteína + plátano + leche de avena</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Errores más comunes que cometen los deportistas</h2>
+  <ul>
+    <li><strong>No comer suficiente proteína:</strong> muchas personas entrenan duro pero no llegan a los 1,6 g/kg de proteína al día necesarios para ganar músculo.</li>
+    <li><strong>Tener miedo a los carbohidratos:</strong> el glucógeno muscular viene de los carbohidratos. Sin ellos, el rendimiento cae.</li>
+    <li><strong>Comer demasiado poco en general:</strong> si estás en déficit calórico muy agresivo y entrenas, pierdes músculo además de grasa.</li>
+    <li><strong>Suplementar sin base:</strong> los suplementos son el 5% del resultado. La dieta es el 95%.</li>
+    <li><strong>Ignorar la hidratación:</strong> perder solo un 2% de tu peso en líquido reduce el rendimiento hasta un 20%.</li>
+  </ul>
+
+  <div class="highlight">
+    💪 Regla sencilla: proteína en cada comida, carbohidratos alrededor del entrenamiento, grasas saludables el resto del día.
+  </div>
+
+  <h2>Resumen práctico</h2>
+  <ul>
+    <li>✅ Come 1,5-2 horas antes: carbohidratos + proteína moderada</li>
+    <li>✅ Come dentro de las 2 horas post-entreno: proteína alta + carbohidratos</li>
+    <li>✅ Mínimo 1,6 g de proteína por kg de peso al día</li>
+    <li>✅ Hidratación constante antes, durante y después</li>
+    <li>✅ Adapta las cantidades a tu objetivo: volumen, definición o rendimiento</li>
+  </ul>
+
+  <div class="autor-card">
+    <div class="autor-avatar">🌿</div>
+    <div class="autor-info">
+      <h4>Daniel Álvarez Pérez</h4>
+      <p>Técnico Superior en Dietética · +20 años en el ámbito sanitario · NutriDietDaniel</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>¿Quieres un plan personalizado?</h3>
+    <p>Cada persona es diferente. Te diseño una pauta nutricional adaptada a tus entrenamientos, tus horarios y tus objetivos.</p>
+    <a href="index.html#contacto" class="cta-btn">Pedir consulta →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 · <a href="index.html">NutriDietDaniel</a> · Daniel Álvarez Pérez · Técnico Superior en Dietética</p>
+  <p style="margin-top:8px;font-size:11px;">Cuidar el cuerpo es honrar la vida.</p>
+</footer>
+
+</body>
+</html>
