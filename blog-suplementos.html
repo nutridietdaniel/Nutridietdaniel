@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suplementos que realmente funcionan · NutriDietDaniel</title>
+<meta name="description" content="Guía honesta sobre suplementos deportivos con evidencia científica real. Qué funciona, qué es marketing y qué evitar. Por Daniel Álvarez, Técnico Superior en Dietética.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', Arial, sans-serif; background: #fdf8f0; color: #1a2010; line-height: 1.7; }
+  nav { background: #1e3a0f; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #e8f5d6; text-decoration: none; font-weight: 600; }
+  .nav-logo span { color: #a8d870; font-style: italic; }
+  .nav-back { color: #a8d870; text-decoration: none; font-size: 13px; letter-spacing: 1px; }
+  .hero { background: linear-gradient(135deg, #1e3a0f 0%, #2f5a1a 100%); padding: 80px 40px; text-align: center; }
+  .hero-tag { display: inline-block; background: rgba(168,216,112,0.2); border: 1px solid rgba(168,216,112,0.4); color: #a8d870; padding: 6px 18px; border-radius: 40px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #fefcf8; font-weight: 400; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero h1 em { font-style: italic; color: #a8d870; }
+  .hero-meta { font-size: 13px; color: rgba(232,245,214,0.6); margin-top: 16px; }
+  .article { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+  .intro { font-size: 18px; color: #2f5a1a; font-style: italic; font-weight: 300; line-height: 1.8; border-left: 4px solid #a8d870; padding-left: 24px; margin-bottom: 48px; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1e3a0f; margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #e8f5d6; }
+  h3 { font-size: 18px; color: #2f5a1a; margin: 28px 0 12px; font-weight: 600; }
+  p { font-size: 16px; color: #3a3a3a; margin-bottom: 16px; font-weight: 300; line-height: 1.8; }
+  .highlight { background: #e8f5d6; border-left: 4px solid #5a9e2f; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: #1e3a0f; font-weight: 500; line-height: 1.6; }
+  .warning { background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: #856404; font-weight: 500; line-height: 1.6; }
+  ul, ol { padding-left: 24px; margin-bottom: 20px; }
+  li { font-size: 15px; color: #3a3a3a; margin-bottom: 8px; font-weight: 300; line-height: 1.7; }
+  li strong { color: #1e3a0f; font-weight: 600; }
+  .suplemento-card { background: #fff; border: 1px solid #e8f5d6; border-radius: 16px; padding: 28px; margin: 20px 0; border-top: 4px solid #5a9e2f; }
+  .suplemento-card.warning-card { border-top-color: #ffc107; }
+  .suplemento-card.danger-card { border-top-color: #dc3545; }
+  .suplemento-card h3 { margin-top: 0; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 40px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .badge-verde { background: #e8f5d6; color: #1e3a0f; }
+  .badge-amarillo { background: #fff3cd; color: #856404; }
+  .badge-rojo { background: #fde8e8; color: #c0392b; }
+  .autor-card { background: #1e3a0f; border-radius: 20px; padding: 36px; margin: 60px 0 40px; display: flex; align-items: center; gap: 24px; }
+  .autor-avatar { width: 72px; height: 72px; border-radius: 50%; background: #a8d870; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+  .autor-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #e8f5d6; margin-bottom: 4px; }
+  .autor-info p { font-size: 13px; color: #a8d870; margin: 0; font-style: italic; }
+  .cta-section { background: #e8f5d6; border-radius: 20px; padding: 40px; text-align: center; margin: 40px 0; }
+  .cta-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1e3a0f; margin-bottom: 12px; }
+  .cta-section p { color: #2f5a1a; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #1e3a0f; color: #fff; padding: 14px 32px; border-radius: 40px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+  .cta-btn:hover { background: #5a9e2f; }
+  footer { background: #1e3a0f; padding: 32px 40px; text-align: center; color: rgba(232,245,214,0.5); font-size: 13px; }
+  footer a { color: #a8d870; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">NutriDiet<span>Daniel</span></a>
+  <a href="blog.html" class="nav-back">← Volver al blog</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Nutrición Deportiva</span>
+  <h1>Suplementos que <em>realmente</em><br>funcionan</h1>
+  <p class="hero-meta">Por Daniel Álvarez · Técnico Superior en Dietética · Mayo 2026</p>
+</div>
+
+<article class="article">
+
+  <p class="intro">El mercado de suplementos deportivos mueve miles de millones de euros al año. La mayor parte es marketing. En este artículo te cuento qué tiene evidencia científica real, qué es discutible y qué deberías evitar directamente.</p>
+
+  <h2>La verdad sobre los suplementos</h2>
+  <p>Los suplementos son exactamente eso: un complemento a una dieta bien planificada. Si tu alimentación base no está bien, ningún suplemento te va a salvar. Y si tu alimentación sí está bien, la mayoría de suplementos son innecesarios.</p>
+  <p>Dicho esto, hay algunos que tienen evidencia científica sólida y pueden marcar la diferencia en deportistas que ya tienen su dieta bien estructurada.</p>
+
+  <div class="highlight">
+    📊 Jerarquía de prioridades: Dieta (70%) → Entrenamiento (20%) → Descanso (8%) → Suplementos (2%)
+  </div>
+
+  <h2>✅ Suplementos con evidencia sólida</h2>
+
+  <div class="suplemento-card">
+    <span class="badge badge-verde">Evidencia A</span>
+    <h3>💪 Creatina Monohidrato</h3>
+    <p>El suplemento más estudiado de la historia del deporte. Más de 500 estudios avalan su eficacia y seguridad.</p>
+    <ul>
+      <li><strong>Qué hace:</strong> aumenta los depósitos de fosfocreatina muscular, mejorando el rendimiento en esfuerzos cortos e intensos (sprints, levantamiento de pesas)</li>
+      <li><strong>Beneficios probados:</strong> más fuerza, más potencia, mejor recuperación, posible beneficio cognitivo</li>
+      <li><strong>Dosis:</strong> 3-5 g al día, todos los días (no necesitas fase de carga)</li>
+      <li><strong>Cuándo tomarla:</strong> cualquier momento del día, aunque post-entreno puede tener ligera ventaja</li>
+      <li><strong>Seguridad:</strong> completamente segura en personas sanas a largo plazo</li>
+    </ul>
+  </div>
+
+  <div class="suplemento-card">
+    <span class="badge badge-verde">Evidencia A</span>
+    <h3>🥛 Proteína en Polvo</h3>
+    <p>No es un suplemento mágico — es simplemente proteína en formato cómodo. El whey (suero de leche) es el más estudiado y de mayor valor biológico.</p>
+    <ul>
+      <li><strong>Qué hace:</strong> ayuda a llegar al objetivo proteico diario de forma cómoda y económica</li>
+      <li><strong>Cuándo usarla:</strong> post-entreno o entre comidas si no llegas a 1,6 g/kg con comida sólida</li>
+      <li><strong>Tipos:</strong> Whey concentrado (económico), Whey aislado (menos lactosa), Caseína (lenta absorción, buena para la noche)</li>
+      <li><strong>Dosis:</strong> la que necesites para completar tu objetivo proteico</li>
+    </ul>
+  </div>
+
+  <div class="suplemento-card">
+    <span class="badge badge-verde">Evidencia A</span>
+    <h3>☕ Cafeína</h3>
+    <p>El estimulante más consumido del mundo y uno de los pocos ergogénicos con evidencia robusta.</p>
+    <ul>
+      <li><strong>Qué hace:</strong> mejora el rendimiento aeróbico y anaeróbico, reduce la percepción de esfuerzo, aumenta la concentración</li>
+      <li><strong>Dosis efectiva:</strong> 3-6 mg por kg de peso corporal, 30-60 minutos antes del entrenamiento</li>
+      <li><strong>Fuentes:</strong> café, té verde, o suplemento en cápsula/polvo</li>
+      <li><strong>Precaución:</strong> puede afectar al sueño si se toma tarde. No abuses.</li>
+    </ul>
+  </div>
+
+  <h2>⚠️ Suplementos con evidencia moderada</h2>
+
+  <div class="suplemento-card warning-card">
+    <span class="badge badge-amarillo">Evidencia B</span>
+    <h3>🔴 Beta-Alanina</h3>
+    <p>Puede mejorar el rendimiento en esfuerzos de 1-4 minutos de duración (ciclismo, natación, deportes de equipo). Produce hormigueo inofensivo en la piel.</p>
+    <ul>
+      <li><strong>Dosis:</strong> 3,2-6,4 g al día, repartida en varias tomas</li>
+      <li><strong>Para quién:</strong> atletas de deportes de resistencia o intermitentes. Menos útil para levantadores de pesas puros.</li>
+    </ul>
+  </div>
+
+  <div class="suplemento-card warning-card">
+    <span class="badge badge-amarillo">Evidencia B</span>
+    <h3>🍃 Omega-3</h3>
+    <p>Principalmente para la salud general y la reducción de inflamación. Beneficio deportivo modesto pero real.</p>
+    <ul>
+      <li><strong>Beneficios:</strong> reducción de inflamación post-ejercicio, posible mejora en la síntesis proteica</li>
+      <li><strong>Dosis:</strong> 2-3 g de EPA+DHA al día</li>
+      <li><strong>Fuentes:</strong> pescado azul, o suplemento de aceite de pescado o algas</li>
+    </ul>
+  </div>
+
+  <h2>❌ Suplementos que puedes evitar</h2>
+
+  <div class="suplemento-card danger-card">
+    <span class="badge badge-rojo">Sin evidencia</span>
+    <h3>🚫 BCAAs (Aminoácidos Ramificados)</h3>
+    <p>Uno de los suplementos más vendidos y menos necesarios. Si ya consumes suficiente proteína de calidad, los BCAAs son dinero tirado. La proteína completa ya contiene todos los aminoácidos esenciales incluyendo leucina, isoleucina y valina.</p>
+  </div>
+
+  <div class="suplemento-card danger-card">
+    <span class="badge badge-rojo">Sin evidencia</span>
+    <h3>🚫 Quemadores de grasa</h3>
+    <p>Ningún suplemento quema grasa de forma significativa. Los que funcionan marginalmente (cafeína, té verde) lo hacen en dosis que ya puedes obtener de alimentos reales. Muchos contienen estimulantes que pueden ser peligrosos.</p>
+  </div>
+
+  <div class="suplemento-card danger-card">
+    <span class="badge badge-rojo">Sin evidencia</span>
+    <h3>🚫 Gainers (aumentadores de masa)</h3>
+    <p>Son básicamente azúcar + proteína mediocre a precio elevado. Si necesitas más calorías, come más comida real. Es más barato, más nutritivo y más saciante.</p>
+  </div>
+
+  <h2>Mi recomendación final</h2>
+  <p>Si tuviera que elegir solo 3 suplementos para un deportista que ya tiene su dieta bien estructurada, serían:</p>
+  <ol>
+    <li><strong>Creatina monohidrato</strong> — 3-5 g al día, siempre</li>
+    <li><strong>Proteína en polvo</strong> — solo si no llegas al objetivo con comida</li>
+    <li><strong>Cafeína</strong> — antes de entrenar, con moderación</li>
+  </ol>
+
+  <div class="highlight">
+    💰 Con 30-40€ al mes en estos tres suplementos básicos obtienes el 90% del beneficio que puede darte la suplementación. Todo lo demás es opcional.
+  </div>
+
+  <div class="autor-card">
+    <div class="autor-avatar">🌿</div>
+    <div class="autor-info">
+      <h4>Daniel Álvarez Pérez</h4>
+      <p>Técnico Superior en Dietética · +20 años en el ámbito sanitario · NutriDietDaniel</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>¿Tienes dudas sobre tu suplementación?</h3>
+    <p>Te ayudo a optimizar tu nutrición y suplementación según tus objetivos reales, sin gastar dinero en lo que no funciona.</p>
+    <a href="index.html#contacto" class="cta-btn">Pedir consulta →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 · <a href="index.html">NutriDietDaniel</a> · Daniel Álvarez Pérez · Técnico Superior en Dietética</p>
+  <p style="margin-top:8px;font-size:11px;">Cuidar el cuerpo es honrar la vida.</p>
+</footer>
+
+</body>
+</html>
