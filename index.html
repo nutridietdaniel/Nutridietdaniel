@@ -195,7 +195,7 @@
   .stat-text { font-size: 13.5px; color: #3d5228; line-height: 1.4; }
   .stat-text strong { color: #1a2010; font-weight: 600; }
 
-  /* SECTIONS (Ajuste para compensar nav fijo) */
+  /* SECTIONS */
   section { padding: 120px 80px 90px 80px; scroll-margin-top: 68px; }
 
   .section-label {
@@ -226,9 +226,7 @@
   }
 
   /* DESCARGA GRATUITA */
-  .descarga {
-    background-color: #fdf8f0;
-  }
+  .descarga { background-color: #fdf8f0; }
 
   .descarga-inner {
     display: grid;
@@ -340,27 +338,10 @@
   }
   .descarga-btn-card:hover { background-color: #ffffff; }
 
-  /* FARMACIA / ASESORÍA */
-  .farmacia {
-    background-color: #ffffff;
-  }
-
-  .farmacia-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
   /* TIENDA */
-  .tienda {
-    background-color: #1e3a0f;
-  }
+  .tienda { background-color: #1e3a0f; }
 
-  .tienda-header {
-    text-align: center;
-    margin-bottom: 56px;
-  }
+  .tienda-header { text-align: center; margin-bottom: 56px; }
   .tienda-header .section-title { color: #fefcf8; text-align: center; }
   .tienda-header .section-label { color: #a8d870; }
   .tienda-header .section-body { color: #a8d870; margin: 0 auto; text-align: center; }
@@ -620,6 +601,81 @@
   }
   .faq-answer.open { max-height: 300px; padding: 0 20px 18px; }
 
+  /* NUEVA SECCIÓN: BLOG */
+  .blog-section {
+    background-color: #ffffff;
+    border-top: 1px solid #d4e8b0;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .blog-header .section-title { margin: 0 auto 16px; }
+  .blog-header .section-body { margin: 0 auto; text-align: center; }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .blog-card {
+    background-color: #fdf8f0;
+    border: 1px solid #d4e8b0;
+    border-radius: 18px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30,58,15,0.1);
+    border-color: #5a9e2f;
+  }
+
+  .blog-date {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #5a9e2f;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .blog-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 22px;
+    color: #1e3a0f;
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .blog-excerpt {
+    font-size: 13.5px;
+    color: #4a6a30;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .blog-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a0f;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   /* CONTACTO */
   .contacto { background-color: #fdf8f0; text-align: center; }
   .contacto .section-title { text-align: center; }
@@ -854,6 +910,7 @@
     section { padding: 90px 24px 64px 24px; }
     .sobre { grid-template-columns: 1fr; gap: 32px; }
     .servicios-grid { grid-template-columns: 1fr 1fr; }
+    .blog-grid { grid-template-columns: 1fr; gap: 20px; }
     .proceso-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
     .faq { grid-template-columns: 1fr; gap: 40px; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -877,6 +934,7 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#sobre">Sobre mí</a></li>
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#tienda">Tienda</a></li>
     <li><a href="#contacto" class="nav-cta">Valoración gratuita</a></li>
   </ul>
@@ -899,327 +957,310 @@
   </div>
   <div class="hero-right">
     <div class="hero-card">
-      <span class="hero-card-icon">🌿</span>
-      <h3>Lo que consiguen mis pacientes</h3>
+      <span class="hero-card-icon">🥗</span>
+      <h3>Así cambia tu día a día</h3>
       <div class="hero-card-stat">
         <span class="stat-dot"></span>
-        <span class="stat-text"><strong>Pérdida de grasa real y sostenible</strong> — sin pasar hambre ni efecto rebote</span>
+        <div class="stat-text"><strong>Cero mitos:</strong> Sin pastillas, batidos mágicos ni restricciones absurdas.</div>
       </div>
       <div class="hero-card-stat">
         <span class="stat-dot"></span>
-        <span class="stat-text"><strong>Mejor rendimiento deportivo</strong> — nutrición adaptada a tu entrenamiento</span>
+        <div class="stat-text"><strong>Flexibilidad real:</strong> Menús realistas y adaptados a tus horarios familiares o de oficina.</div>
       </div>
       <div class="hero-card-stat">
         <span class="stat-dot"></span>
-        <span class="stat-text"><strong>Hábitos que duran</strong> — no dietas de 3 semanas</span>
-      </div>
-      <div class="hero-card-stat">
-        <span class="stat-dot"></span>
-        <span class="stat-text"><strong>Plan adaptado a tu vida real</strong> — tus horarios, tu cocina, tu presupuesto</span>
-      </div>
-      <div class="hero-card-stat">
-        <span class="stat-dot"></span>
-        <span class="stat-text"><strong>+20 años de experiencia sanitaria</strong> — respaldo profesional real</span>
+        <div class="stat-text"><strong>Salud y Rendimiento:</strong> Tanto si buscas mejorar tu rendimiento deportivo como optimizar tu salud digestiva.</div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="about-author">
-  <p>Soy <strong>Daniel Álvarez Pérez</strong>, técnico superior en dietética con más de 20 años en el ámbito sanitario. He acompañado a cientos de personas a perder grasa, mejorar su rendimiento deportivo y construir una relación sana con la comida — sin dietas de moda ni restricciones absurdas.</p>
-</div>
-
 <!-- SOBRE MÍ -->
 <section class="sobre" id="sobre">
-  <div>
-    <div class="sobre-box">
-      <h4>Daniel</h4>
-      <p>Técnico Superior en Dietética</p>
-      <div class="sobre-pills">
-        <span class="pill">Dietética</span>
-        <span class="pill">Técnico en Farmacia</span>
-        <span class="pill">Nutrición deportiva</span>
-        <span class="pill">Pérdida de peso</span>
-        <span class="pill">Menús especiales</span>
-        <span class="pill">+20 años de experiencia</span>
-      </div>
-      <div class="sobre-acreditation">
-        🎓 Técnico Superior en Dietética · Nutrición Deportiva Avanzada · Técnico en Farmacia
-      </div>
+  <div class="sobre-box">
+    <h4>Daniel Álvarez Pérez</h4>
+    <p>Educador nutricional y divulgador</p>
+    <div class="sobre-pills">
+      <span class="pill">🎓 Dietista Registrado</span>
+      <span class="pill">🏀 Nutrición Deportiva</span>
+      <span class="pill">🥑 Recomposición Corporal</span>
+      <span class="pill">🧬 Salud Digestiva e Intolerancias</span>
+    </div>
+    <div class="sobre-acreditation">
+      Mi pasión por la nutrición se basa en el rigor científico: soy Técnico Superior en Dietética y Técnico en Farmacia, aplicando la evidencia para crear hábitos reales, saludables y duraderos.
     </div>
   </div>
   <div>
-    <span class="section-label">Sobre mí</span>
-    <h2 class="section-title">Por qué mi enfoque<br><em>funciona</em></h2>
+    <span class="section-label">Hola, soy Daniel</span>
+    <h2 class="section-title">Mi filosofía no es prohibir, sino <em>educar</em></h2>
     <p class="section-body">
-      Llevo más de 20 años en el ámbito sanitario viendo el mismo patrón: personas que se esfuerzan, que hacen dietas, que van al gimnasio… y que no consiguen resultados que duren. No porque les falte motivación. Sino porque nadie les había dado un plan adaptado a su vida real.
+      No te voy a poner una hoja de lechuga y pechuga en la nevera. Mi objetivo como dietista es darte las herramientas de educación nutricional necesarias para que entiendas la comida, disfrutes del proceso y logres que comer sano no sea una obligación pesada, sino tu estilo de vida natural.
     </p>
-    <br>
-    <p class="section-body">
-      Mi trabajo es cambiar eso. Diseño pautas que encajan en tus horarios, en lo que cocinas en casa, en tu presupuesto y en tus objetivos. Porque un plan que no puedes seguir no sirve de nada.
-    </p>
-    <br>
-    <p class="section-body">
-      Especializado en pérdida de grasa, nutrición deportiva avanzada y menús especiales. Consulta online y presencial en Madrid.
-    </p>
+  </div>
+</section>
+
+<!-- SECCIÓN DESCARGA RECURSO GRATUITO -->
+<section class="descarga">
+  <div class="descarga-inner">
+    <div>
+      <span class="section-label">Contenido exclusivo</span>
+      <h2 class="section-title">Empieza hoy mismo con mi <em>Ebook Gratuito</em></h2>
+      <p class="section-body">
+        He condensado mis años de experiencia en una guía práctica y directa. Aprende a estructurar tus menús, interpretar las etiquetas del supermercado sin caer en trampas de marketing y derribar los mitos nutricionales más comunes.
+      </p>
+      <div class="descarga-pills">
+        <span class="descarga-pill">✓ PDF de lectura rápida</span>
+        <span class="descarga-pill">✓ Consejos prácticos</span>
+        <span class="descarga-pill">✓ 100% Gratis</span>
+      </div>
+      <a href="#contacto" class="descarga-btn">Descargar guía gratis</a>
+    </div>
+    
+    <div class="descarga-card">
+      <div class="descarga-card-top">
+        <span class="descarga-badge">NUEVO</span>
+        <span class="descarga-icon">📖</span>
+      </div>
+      <h3>Guía de Nutrición Básica y Consejos Dietéticos</h3>
+      <p>Por Daniel Álvarez</p>
+      <ul class="descarga-list">
+        <li>👉 Cómo diseñar un menú equilibrado en 5 minutos.</li>
+        <li>👉 La verdad sobre los ultraprocesados "saludables".</li>
+        <li>👉 Estrategias sencillas para controlar la ansiedad por el dulce.</li>
+      </ul>
+      <a href="#contacto" class="descarga-btn-card">Quiero mi copia gratuita</a>
+    </div>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section class="servicios" id="servicios">
   <div class="servicios-header">
-    <span class="section-label">Servicios</span>
-    <h2 class="section-title">¿Cuál es tu <em>objetivo</em>?</h2>
-    <p class="section-body">Cada servicio está diseñado para un punto de partida diferente. Encuentra el tuyo.</p>
+    <span class="section-label">Planes a tu medida</span>
+    <h2 class="section-title">¿Cómo te puedo <em>ayudar?</em></h2>
+    <p class="section-body">Planes 100% personalizados, basados en ciencia y enfocados a tus metas específicas.</p>
   </div>
   <div class="servicios-grid">
     <div class="servicio-card">
-      <span class="sc-icon">💻</span>
-      <h3 class="sc-title">Consulta Online</h3>
-      <p class="sc-desc">Desde cualquier lugar de España. Misma calidad, sin desplazamientos. Ideal si tienes poco tiempo o vives fuera de Madrid.</p>
+      <span class="sc-icon">📉</span>
+      <h3 class="sc-title">Pérdida de Peso y Grasa</h3>
+      <p class="sc-desc">Sin pasar hambre ni efectos rebote. Enfocado en mantener la masa muscular y mejorar tu energía diaria.</p>
     </div>
     <div class="servicio-card">
-      <span class="sc-icon">🏥</span>
-      <h3 class="sc-title">Consulta Presencial</h3>
-      <p class="sc-desc">Valoración completa en consulta: mediciones, análisis y plan desde el primer día. Para quien prefiere el trato directo.</p>
-    </div>
-    <div class="servicio-card">
-      <span class="sc-icon">🏋️</span>
+      <span class="sc-icon">💪</span>
       <h3 class="sc-title">Nutrición Deportiva</h3>
-      <p class="sc-desc">Come bien alrededor del entrenamiento, protege el músculo y mejora tu recuperación. Para deportistas que quieren resultados reales.</p>
+      <p class="sc-desc">Optimiza tu rendimiento en la pista, el gimnasio o tus entrenamientos. Menús calculados para tu desgaste físico.</p>
     </div>
     <div class="servicio-card">
-      <span class="sc-icon">⚖️</span>
-      <h3 class="sc-title">Pérdida de Grasa</h3>
-      <p class="sc-desc">Sin pasar hambre, sin efecto rebote. Un plan que funciona porque se adapta a ti — no al revés.</p>
-    </div>
-    <div class="servicio-card">
-      <span class="sc-icon">🍽️</span>
-      <h3 class="sc-title">Menús Especiales</h3>
-      <p class="sc-desc">Intolerancias, alergias, patologías o necesidades concretas. Cada menú diseñado desde cero para tu situación.</p>
-    </div>
-    <div class="servicio-card">
-      <span class="sc-icon">💊</span>
-      <h3 class="sc-title">Asesoría Farmacéutica</h3>
-      <p class="sc-desc">Con más de 20 años en farmacia, combino nutrición y salud para darte una visión sanitaria completa y rigurosa.</p>
+      <span class="sc-icon">🍎</span>
+      <h3 class="sc-title">Educación Nutricional</h3>
+      <p class="sc-desc">Aprende a leer etiquetas en el súper, planificar tu compra semanal y cocinar sano para toda la familia.</p>
     </div>
   </div>
 </section>
 
 <!-- PROCESO -->
-<section class="proceso" id="proceso">
-  <span class="section-label">Cómo funciona</span>
-  <h2 class="section-title">El proceso es <em>sencillo</em></h2>
-  <p class="section-body">De la primera consulta a tus objetivos, así trabajamos juntos.</p>
+<section class="proceso">
+  <span class="section-label">Método NutriDiet</span>
+  <h2 class="section-title">Tu camino hacia el <em>éxito</em></h2>
+  <p class="section-body">Un sistema de acompañamiento continuo para asegurar que nunca te sientas perdido.</p>
   <div class="proceso-steps">
     <div>
       <div class="step-num">01</div>
-      <h3 class="step-title">Primera consulta</h3>
-      <p class="step-desc">Hablamos de tu situación actual, historial clínico, hábitos y objetivos. Sin prisa, con escucha real.</p>
+      <h3 class="step-title">Valoración inicial</h3>
+      <p class="step-desc">Analizamos tu punto de partida, objetivos, horarios, analíticas e historial dietético.</p>
     </div>
     <div>
       <div class="step-num">02</div>
-      <h3 class="step-title">Valoración nutricional</h3>
-      <p class="step-desc">Analizamos tu composición corporal y analíticas para diseñar un punto de partida personalizado.</p>
+      <h3 class="step-title">Diseño a medida</h3>
+      <p class="step-desc">Creo un menú adaptado a tus gustos culinarios y a tu ritmo de vida real.</p>
     </div>
     <div>
       <div class="step-num">03</div>
-      <h3 class="step-title">Plan personalizado</h3>
-      <p class="step-desc">Recibes tu pauta nutricional adaptada a ti: tus gustos, rutina, presupuesto y objetivos.</p>
+      <h3 class="step-title">Revisión periódica</h3>
+      <p class="step-desc">Cada dos semanas medimos progresos, resolvemos dudas y ajustamos el plan según tus sensaciones.</p>
     </div>
     <div>
       <div class="step-num">04</div>
-      <h3 class="step-title">Seguimiento continuo</h3>
-      <p class="step-desc">Revisiones periódicas y ajustes cuando son necesarios. No te quedas solo en el proceso.</p>
+      <h3 class="step-title">Autonomía total</h3>
+      <p class="step-desc">Consigues los conocimientos necesarios para mantener tus resultados de por vida de forma libre.</p>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
+<!-- PREGUNTAS FRECUENTES -->
+<section class="faq">
   <div>
-    <span class="section-label">Preguntas frecuentes</span>
-    <h2 class="section-title">Resuelvo tus <em>dudas</em></h2>
-    <p class="section-body">Si tienes alguna pregunta que no aparece aquí, escríbeme y te respondo enseguida.</p>
+    <span class="section-label">Resolviendo dudas</span>
+    <h2 class="section-title">Preguntas<br><em>frecuentes</em></h2>
+    <p class="section-body">Si tienes alguna otra consulta, no dudes en escribirme directamente por el botón de WhatsApp.</p>
   </div>
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        ¿Cuánto dura la primera consulta?
+        ¿Tengo que comprar productos o suplementos obligatorios?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-answer">La primera consulta dura aproximadamente 60 minutos. Es una sesión completa donde recojo toda la información necesaria para diseñar tu plan personalizado.</div>
+      <div class="faq-answer">
+        Rotundamente no. Mis planes se basan en comida real que encuentras en cualquier supermercado o mercado tradicional. La suplementación solo se valora en casos muy específicos (como rendimiento deportivo o déficits clínicos demostrados).
+      </div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        ¿Con qué frecuencia son las revisiones?
+        ¿Qué pasa si tengo comidas fuera de casa o eventos?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-answer">Habitualmente las revisiones son cada 3-4 semanas al inicio y se van espaciando según avanzas. Siempre hay comunicación entre consultas si lo necesitas.</div>
+      <div class="faq-answer">
+        La vida social forma parte de la salud. Te daré estrategias específicas de educación nutricional para saber elegir en los restaurantes o gestionar los excesos puntuales sin culpabilidad ni tirar por tierra tu progreso.
+      </div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        ¿Trabajas con patologías específicas?
+        ¿Cómo se realizan las revisiones y el seguimiento?
         <span class="faq-arrow">+</span>
       </button>
-      <div class="faq-answer">Sí. Trabajo con diabetes, hipertensión, enfermedad renal crónica, síndrome de intestino irritable, enfermedad inflamatoria intestinal y otras condiciones que requieren manejo dietético específico.</div>
+      <div class="faq-answer">
+        Tanto en modalidad presencial como online, evaluamos tus métricas corporales, adherencia al menú y niveles de energía cada 15 días, reajustando lo necesario para asegurar tu constancia y comodidad.
+      </div>
     </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        ¿Las dietas son muy restrictivas?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-answer">No. Diseño pautas que se adaptan a tu vida real, tus gustos y tu rutina. Un plan que no puedes seguir no sirve de nada. Buscamos cambios sostenibles, no sufrimiento.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        ¿Puedo hacer consulta online desde fuera de España?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-answer">Sí, la consulta online está disponible para cualquier persona hispanohablante, independientemente de dónde te encuentres.</div>
-    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: BLOG -->
+<section class="blog-section" id="blog">
+  <div class="blog-header">
+    <span class="section-label">Divulgación y Ciencia</span>
+    <h2 class="section-title">Últimos artículos del <em>Blog</em></h2>
+    <p class="section-body">Consejos, desmentidos de mitos y artículos de lectura rápida sobre nutrición práctica y salud.</p>
+  </div>
+  <div class="blog-grid">
+    <a href="#" class="blog-card">
+      <span class="blog-date">15 Mayo, 2026</span>
+      <h3 class="blog-title">¿Es malo comer carbohidratos por la noche?</h3>
+      <p class="blog-excerpt">Desmontamos uno de los mitos más extendidos de la nutrición. Qué dice la ciencia sobre la cena y la pérdida de grasa.</p>
+      <span class="blog-link">Leer artículo →</span>
+    </a>
+    <a href="#" class="blog-card">
+      <span class="blog-date">02 Mayo, 2026</span>
+      <h3 class="blog-title">Cómo organizar tu 'Batch Cooking' dominical</h3>
+      <p class="blog-excerpt">Estrategias y trucos para cocinar solo 2 horas el domingo y tener listos y organizados tus menús saludables para toda la semana.</p>
+      <span class="blog-link">Leer artículo →</span>
+    </a>
+    <a href="#" class="blog-card">
+      <span class="blog-date">24 Abril, 2026</span>
+      <h3 class="blog-title">Nutrición y Baloncesto: Energía en la pista</h3>
+      <p class="blog-excerpt">Qué comer antes y después de un partido exigente para maximizar la velocidad, el salto y evitar los molestos bajones de energía.</p>
+      <span class="blog-link">Leer artículo →</span>
+    </a>
   </div>
 </section>
 
 <!-- TIENDA -->
 <section class="tienda" id="tienda">
   <div class="tienda-header">
-    <span class="section-label">Tienda</span>
-    <h2 class="section-title">Mis <em>productos</em></h2>
-    <p class="section-body">Guías, recetas y planes elaborados por mí para ayudarte a mejorar tu salud desde casa.</p>
+    <span class="section-label">Planes y recursos rápidos</span>
+    <h2 class="section-title">Tienda <em>NutriDiet</em></h2>
+    <p class="section-body">Accede directamente a mis herramientas digitales y programas específicos listos para empezar.</p>
   </div>
   <div class="tienda-grid">
     <div class="tienda-card">
-      <div class="tienda-emoji">🥗</div>
-      <div class="tienda-badge">Más vendido</div>
-      <h3 class="tienda-title">30 Recetas Saludables para Bajar Peso</h3>
-      <p class="tienda-desc">15 comidas + 15 cenas equilibradas, fáciles de preparar y diseñadas para perder peso sin pasar hambre.</p>
-      <div class="tienda-price">9,99€</div>
-      <a href="https://nutridietdaniel.gumroad.com/l/btdsn" target="_blank" class="tienda-btn">Comprar ahora →</a>
+      <span class="tienda-emoji">📅</span>
+      <span class="tienda-badge">Popular</span>
+      <h3 class="tienda-title">Plan Mensual Personalizado</h3>
+      <p class="tienda-desc">Entrevista inicial online, menú 100% a medida y 2 revisiones quincenales por WhatsApp o videollamada.</p>
+      <div class="tienda-price">60€</div>
+      <a href="#contacto" class="tienda-btn">Contratar Plan</a>
     </div>
     <div class="tienda-card">
-      <div class="tienda-emoji">🌸</div>
-      <h3 class="tienda-title">Guía Completa de Salud Hormonal Femenina</h3>
-      <p class="tienda-desc">Todo lo que necesitas saber sobre alimentación y salud hormonal. Una guía práctica y completa.</p>
-      <div class="tienda-price">6,99€</div>
-      <a href="https://nutridietdaniel.gumroad.com/l/clzzgl" target="_blank" class="tienda-btn">Comprar ahora →</a>
+      <span class="tienda-emoji">📦</span>
+      <span class="tienda-badge">Completo</span>
+      <h3 class="tienda-title">Bono Trimestre Saludable</h3>
+      <p class="tienda-desc">3 meses de seguimiento continuo. Incluye reajustes ilimitados del menú y soporte prioritario de lunes a viernes.</p>
+      <div class="tienda-price">150€</div>
+      <a href="#contacto" class="tienda-btn">Ahorrar con Bono</a>
     </div>
     <div class="tienda-card">
-      <div class="tienda-emoji">🌅</div>
-      <h3 class="tienda-title">Desayunos Antiinflamatorios</h3>
-      <p class="tienda-desc">Los mejores desayunos antiinflamatorios para empezar el día con energía y cuidar tu salud desde dentro.</p>
-      <div class="tienda-price">3,99€</div>
-      <a href="https://nutridietdaniel.gumroad.com/l/zzqai" target="_blank" class="tienda-btn">Comprar ahora →</a>
-    </div>
-  </div>
-</section>
-
-<!-- DESCARGA GRATUITA -->
-<section class="descarga" id="descarga">
-  <div class="descarga-inner">
-    <div class="descarga-texto">
-      <span class="section-label">Recurso gratuito</span>
-      <h2 class="section-title">Ebook <em>gratuito</em> para ti</h2>
-      <p class="section-body">Si estás en tratamiento con Ozempic, Wegovy o Mounjaro, este ebook te explica exactamente qué comer, cómo proteger tu músculo y cómo evitar el efecto rebote cuando dejes el tratamiento.</p>
-      <br>
-      <p class="section-body">Elaborado por Daniel Álvarez, Técnico Superior en Dietética y Nutrición con más de 20 años de experiencia en el ámbito sanitario. 100% gratuito.</p>
-      <div class="descarga-pills">
-        <span class="descarga-pill">🥗 Qué comer con GLP-1</span>
-        <span class="descarga-pill">💪 Sin perder músculo</span>
-        <span class="descarga-pill">🔄 Cero efecto rebote</span>
-        <span class="descarga-pill">📋 Menús semanales</span>
-      </div>
-      <a href="glp1.html" target="_blank" class="descarga-btn">📥 Leer ebook gratuito →</a>
-    </div>
-    <div class="descarga-visual">
-      <div class="descarga-card">
-        <div class="descarga-card-top">
-          <span class="descarga-badge">GRATIS</span>
-          <span class="descarga-icon">📘</span>
-        </div>
-        <h3>Alimentación inteligente con GLP-1</h3>
-        <p>Ozempic · Wegovy · Mounjaro</p>
-        <ul class="descarga-list">
-          <li>✦ 6 capítulos con evidencia científica</li>
-          <li>✦ Plan semanal completo</li>
-          <li>✦ 3 recetas estrella adaptadas</li>
-          <li>✦ Guía de suplementación</li>
-          <li>✦ Protocolo para evitar el rebote</li>
-        </ul>
-        <a href="glp1.html" target="_blank" class="descarga-btn-card">Acceder gratis →</a>
-      </div>
+      <span class="tienda-emoji">📋</span>
+      <span class="tienda-badge">Guía</span>
+      <h3 class="tienda-title">Plantillas de Compra Eficiente</h3>
+      <p class="tienda-desc">Listas descargables organizadas por grupos de alimentos para agilizar tu paso por el supermercado de forma sana.</p>
+      <div class="tienda-price">12€</div>
+      <a href="#contacto" class="tienda-btn">Comprar Plantillas</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section class="contacto" id="contacto">
-  <span class="section-label">Contacto</span>
-  <h2 class="section-title">Da el primer <em>paso</em></h2>
-  <p class="section-body">La primera valoración es gratuita. Sin compromisos. Solo cuéntame dónde estás y hacia dónde quieres ir.</p>
-
-  <div class="contact-grid">
-    <a href="https://instagram.com/nutridietdaniel" target="_blank" class="contact-card">
-      <span class="cc-icon">📸</span>
-      <span class="cc-label">Instagram</span>
-      <span class="cc-value">@nutridietdaniel</span>
-    </a>
-    <a href="https://wa.me/34660281063" target="_blank" class="contact-card">
-      <span class="cc-icon">💬</span>
-      <span class="cc-label">WhatsApp</span>
-      <span class="cc-value">660 281 063</span>
-    </a>
-    <a href="mailto:nutridietdaniel@gmail.com" class="contact-card">
-      <span class="cc-icon">✉️</span>
-      <span class="cc-label">Email</span>
-      <span class="cc-value">nutridietdaniel@gmail.com</span>
-    </a>
-  </div>
-
-  <div class="contact-form-wrapper">
-    <div class="daniel-foto-wrap">
-      <img src="daniel.PNG" alt="Daniel Alvarez - Técnico Superior en Dietética" class="daniel-foto-bottom">
-      <div class="daniel-foto-caption">
-        <strong>Daniel Álvarez</strong>
-        <span>Técnico Superior en Dietética</span>
-      </div>
+  <div class="daniel-foto-wrap">
+    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=480" alt="Daniel Álvarez Pérez" class="daniel-foto-bottom">
+    <div class="daniel-foto-caption">
+      <strong>Daniel Álvarez Pérez</strong>
+      <span>Técnico Superior en Dietética</span>
     </div>
   </div>
 
+  <p class="about-author">
+    Me apasiona ayudar a las personas a descifrar el complejo mundo de la alimentación actual. Con mi formación técnica, entiendo cómo reacciona tu cuerpo a los macronutrientes, pero sobre todo, entiendo lo valioso que es tu tiempo. Diseñemos un plan que disfrutes de verdad.
+  </p>
+
+  <span class="section-label">Empieza el cambio</span>
+  <h2 class="section-title">¿Hablamos de tu <em>caso?</em></h2>
+  <p class="section-body">Rellena este breve formulario y me pondré en contacto contigo para tu primera valoración 100% gratuita.</p>
+
+  <div class="contact-grid">
+    <a href="mailto:info@nutridietdaniel.com" class="contact-card">
+      <span class="cc-icon">✉</span>
+      <span class="cc-label">Email</span>
+      <span class="cc-value">info@nutridietdaniel.com</span>
+    </a>
+    <a href="https://wa.me/34660281063" target="_blank" class="contact-card">
+      <span class="cc-icon">💬</span>
+      <span class="cc-label">WhatsApp Directo</span>
+      <span class="cc-value">+34 660 281 063</span>
+    </a>
+    <div class="contact-card">
+      <span class="cc-icon">📍</span>
+      <span class="cc-label">Consulta</span>
+      <span class="cc-value">Madrid / Online</span>
+    </div>
+  </div>
+
+  <!-- FORMULARIO DE CONTACTO -->
   <div class="contact-form">
-    <h3>Hablemos de tus objetivos</h3>
-    <form action="https://formspree.io/f/mbdwyelk" method="POST">
-      <input type="hidden" name="_replyto" value="nutridietdaniel@gmail.com">
-      <input type="hidden" name="_subject" value="Nueva consulta desde la web">
+    <h3>Cuéntame un poco sobre ti</h3>
+    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias! Me pondré en contacto contigo muy pronto.');">
       <div class="form-row">
         <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" placeholder="Ej. Carlos" required>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="tu@email.com" required>
+          <label for="email">Tu correo electrónico</label>
+          <input type="email" id="email" placeholder="Ej. carlos@email.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="whatsapp">Teléfono / WhatsApp</label>
+          <input type="tel" id="whatsapp" placeholder="Ej. 600000000">
+        </div>
+        <div class="form-group">
+          <label for="objetivo">¿Cuál es tu meta principal?</label>
+          <select id="objetivo" required>
+            <option value="">Selecciona una opción</option>
+            <option value="peso">Pérdida de peso / grasa</option>
+            <option value="deporte">Mejorar rendimiento deportivo</option>
+            <option value="salud">Salud digestiva / Intolerancias</option>
+            <option value="habitos">Aprender a comer sano</option>
+          </select>
         </div>
       </div>
       <div class="form-group">
-        <label>Teléfono (opcional)</label>
-        <input type="tel" name="telefono" placeholder="Tu número de teléfono">
+        <label for="mensaje">¿Quieres darme algún detalle más? (Opcional)</label>
+        <textarea id="mensaje" placeholder="Cuéntame brevemente tus horarios, si practicas deporte o qué te cuesta más conseguir..."></textarea>
       </div>
-      <div class="form-group">
-        <label>Servicio de interés</label>
-        <select name="servicio">
-          <option value="">Selecciona un servicio...</option>
-          <option>Consulta Online</option>
-          <option>Consulta Presencial</option>
-          <option>Nutrición Clínica / Patologías</option>
-          <option>Pérdida de Peso</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Cuéntame tu caso</label>
-        <textarea name="mensaje" placeholder="¿Cuál es tu objetivo principal? ¿Tienes alguna patología o condición especial?"></textarea>
-      </div>
-      <button type="submit" class="btn-submit">Reserva tu valoración →</button>
+      <button type="submit" class="btn-submit">Solicitar valoración gratuita</button>
     </form>
   </div>
 </section>
@@ -1227,43 +1268,43 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">NutriDiet<span>Daniel</span></div>
-  <span class="footer-copy">© 2026 NutriDietDaniel · Técnico Superior en Dietética</span>
+  <div class="footer-copy">&copy; 2026 NutriDietDaniel. Todos los derechos reservados.</div>
   <div class="footer-links">
-    <a href="https://instagram.com/nutridietdaniel" target="_blank">📸</a>
-    <a href="https://wa.me/34660281063" target="_blank">💬</a>
-    <a href="mailto:nutridietdaniel@gmail.com">✉️</a>
+    <a href="#" title="Aviso Legal">⚖️</a>
+    <a href="#" title="Política de Privacidad">🔒</a>
   </div>
 </footer>
 
 <script>
   function toggleMenu() {
-    var nav = document.getElementById('navLinks');
-    nav.classList.toggle('open');
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
   }
 
-  // Close menu when link clicked
-  document.querySelectorAll('.nav-links a').forEach(function(link) {
-    link.addEventListener('click', function() {
+  function toggleFaq(button) {
+    const answer = button.nextElementSibling;
+    const arrow = button.querySelector('.faq-arrow');
+    
+    answer.classList.toggle('open');
+    arrow.classList.toggle('open');
+    
+    if (answer.classList.contains('open')) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      arrow.textContent = "−";
+    } else {
+      answer.style.maxHeight = null;
+      arrow.textContent = "+";
+    }
+  }
+
+  // Cerrar menú móvil al hacer click en un enlace
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
       document.getElementById('navLinks').classList.remove('open');
     });
   });
-
-  function toggleFaq(btn) {
-    var answer = btn.nextElementSibling;
-    var arrow = btn.querySelector('.faq-arrow');
-    var isOpen = answer.classList.contains('open');
-    var answers = document.querySelectorAll('.faq-answer');
-    var arrows = document.querySelectorAll('.faq-arrow');
-    
-    for (var i = 0; i < answers.length; i++) {
-      answers[i].classList.remove('open');
-      arrows[i].classList.remove('open');
-    }
-    if (!isOpen) {
-      answer.classList.add('open');
-      arrow.classList.add('open');
-    }
-  }
 </script>
 
 </body>
