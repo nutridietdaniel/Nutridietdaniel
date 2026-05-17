@@ -126,14 +126,51 @@
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #e8f5d6;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all .25s ease;
     text-decoration: none;
     display: flex;
     flex-direction: column;
   }
   .article-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 60px rgba(30,58,15,0.12);
+  }
+
+  .about-author{
+    max-width:800px;
+    margin:40px auto 10px;
+    text-align:center;
+    color:#4a6a30;
+    font-size:15px;
+    line-height:1.8;
+    padding:0 20px;
+  }
+
+  .faq{
+    max-width:800px;
+    margin:80px auto;
+    padding: 0 24px;
+  }
+
+  .faq h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:36px;
+    margin-bottom:30px;
+    color:#1e3a0f;
+  }
+
+  .faq h3{
+    margin-top:24px;
+    margin-bottom:8px;
+    color:#1e3a0f;
+    font-size:17px;
+    font-weight:600;
+  }
+
+  .faq p{
+    color:#4a6a30;
+    line-height:1.7;
+    font-weight:300;
   }
 
   .card-top {
@@ -291,6 +328,10 @@
   <p>Artículos con base científica sobre nutrición, deporte y salud. Sin mitos, sin milagros.</p>
 </div>
 
+<div class="about-author">
+  <p>Soy <strong>Daniel Álvarez Pérez</strong>, técnico superior en dietética especializado en pérdida de grasa, nutrición deportiva y educación alimentaria en Madrid y online.</p>
+</div>
+
 <div class="blog-container">
 
   <span class="section-label">Nutrición Deportiva</span>
@@ -385,10 +426,23 @@
   <div class="cta-banner">
     <h2>¿Sientes que tu alimentación<br>te cuesta más de lo que debería?</h2>
     <p>Si sientes que tu alimentación te cuesta más de lo que debería, podemos trabajarlo juntos.</p>
-    <a href="index.html#contacto" class="cta-btn">Hablemos →</a>
+    <a href="index.html#contacto" class="cta-btn">Reserva tu valoración →</a>
   </div>
 
 </div>
+
+<section class="faq">
+  <h2>Preguntas frecuentes</h2>
+
+  <h3>¿Trabajas online?</h3>
+  <p>Sí, realizo consultas online y presenciales en Madrid.</p>
+
+  <h3>¿Trabajas pérdida de grasa y nutrición deportiva?</h3>
+  <p>Sí, son dos de las áreas principales que trabajo en consulta.</p>
+
+  <h3>¿También ayudas con hábitos y ansiedad con la comida?</h3>
+  <p>Sí, el objetivo no es solo cambiar la dieta, sino mejorar la relación con la alimentación.</p>
+</section>
 
 <footer>
   <p>© 2026 · <a href="index.html">NutriDietDaniel</a> · Daniel Álvarez Pérez · Técnico Superior en Dietética</p>
