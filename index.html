@@ -1369,7 +1369,39 @@
         <label>Cuéntame tu caso</label>
         <textarea name="mensaje" placeholder="¿Cuál es tu objetivo principal? Cuéntame tu situación y cualquier condición médica que tu equipo médico haya identificado."></textarea>
       </div>
-      <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; background: #f5ede0; padding: 14px 16px; border-radius: 10px; border-left: 3px solid #5a9e2f;">
+      <!-- INFORMACIÓN BÁSICA DE PROTECCIÓN DE DATOS (Primera capa RGPD) -->
+      <div class="form-group" style="background: #f5ede0; padding: 16px 18px; border-radius: 10px; border-left: 3px solid #5a9e2f; font-size: 12px; color: #3d5228; line-height: 1.6;">
+        <strong style="display: block; color: #1e3a0f; margin-bottom: 8px; font-size: 12.5px;">Información básica sobre protección de datos</strong>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top; width: 32%;"><strong>Responsable:</strong></td>
+            <td style="padding: 3px 0;">Daniel Álvarez Pérez (NutriDietDaniel)</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top;"><strong>Finalidad:</strong></td>
+            <td style="padding: 3px 0;">Atender tu consulta y, en su caso, prestar el servicio solicitado.</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top;"><strong>Legitimación:</strong></td>
+            <td style="padding: 3px 0;">Tu consentimiento al enviar el formulario.</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top;"><strong>Destinatarios:</strong></td>
+            <td style="padding: 3px 0;">No se ceden datos a terceros salvo obligación legal.</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top;"><strong>Derechos:</strong></td>
+            <td style="padding: 3px 0;">Acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a nutridietdaniel@gmail.com.</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 6px 3px 0; vertical-align: top;"><strong>Más información:</strong></td>
+            <td style="padding: 3px 0;"><a href="legal.html#privacidad" target="_blank" style="color: #1e3a0f; text-decoration: underline;">Política de privacidad completa</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- CHECKBOX DE CONSENTIMIENTO RGPD -->
+      <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; background: #fdf8f0; border-radius: 10px; border: 1px solid #d4e8b0;">
         <input type="checkbox" name="consent" id="consent" required style="margin-top: 4px; cursor: pointer; flex-shrink: 0;">
         <label for="consent" style="font-size: 13px; color: #3d5228; line-height: 1.5; cursor: pointer; margin: 0;">
           He leído y acepto la <a href="legal.html#privacidad" target="_blank" style="color: #1e3a0f; text-decoration: underline;">política de privacidad</a> y consiento el tratamiento de mis datos para responder a mi consulta. <span style="color: #b23a48;">*</span>
@@ -1412,6 +1444,50 @@
     <a href="legal.html" style="color: #a8d870; text-decoration: none; border-bottom: 1px solid #a8d870;">Aviso legal · Privacidad · Cookies</a>
   </div>
 </footer>
+
+<!-- BANNER DE COOKIES -->
+<div id="cookieBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1e3a0f; color:#fdf8f0; padding:20px 24px; box-shadow:0 -4px 20px rgba(0,0,0,0.2); z-index:9999; font-family:'Outfit', sans-serif;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px; justify-content:space-between;">
+    <div style="flex:1; min-width:280px;">
+      <p style="font-size:14px; line-height:1.5; margin:0 0 6px 0; color:#fdf8f0;">
+        <strong style="color:#a8d870;">🍃 Uso de cookies</strong>
+      </p>
+      <p style="font-size:12.5px; line-height:1.5; margin:0; color:#c8e8a0;">
+        Esta web utiliza cookies técnicas estrictamente necesarias para su funcionamiento. Al cargar recursos externos (Google Fonts, Gumroad) pueden generarse cookies de esos proveedores. Puedes consultar más detalles en nuestra <a href="legal.html#cookies" target="_blank" style="color:#a8d870; text-decoration:underline;">política de cookies</a>.
+      </p>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button onclick="rejectCookies()" style="background:transparent; color:#fdf8f0; border:1.5px solid #a8d870; padding:10px 20px; border-radius:30px; font-size:13px; font-weight:500; cursor:pointer; font-family:inherit;">Solo necesarias</button>
+      <button onclick="acceptCookies()" style="background:#a8d870; color:#1e3a0f; border:1.5px solid #a8d870; padding:10px 22px; border-radius:30px; font-size:13px; font-weight:600; cursor:pointer; font-family:inherit;">Aceptar todo</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // BANNER DE COOKIES
+  (function() {
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
+    }
+    function setCookie(name, value, days) {
+      var d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/;SameSite=Lax";
+    }
+    if (!getCookie('cookieConsent')) {
+      document.getElementById('cookieBanner').style.display = 'block';
+    }
+    window.acceptCookies = function() {
+      setCookie('cookieConsent', 'accepted', 365);
+      document.getElementById('cookieBanner').style.display = 'none';
+    };
+    window.rejectCookies = function() {
+      setCookie('cookieConsent', 'rejected', 365);
+      document.getElementById('cookieBanner').style.display = 'none';
+    };
+  })();
+</script>
 
 <script>
   function toggleMenu() {
